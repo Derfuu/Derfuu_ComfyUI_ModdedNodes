@@ -56,10 +56,14 @@ class LatentScale_Ratio:
     FUNCTION = "scale"
     CATEGORY = TREE_LATENTS
 
-    def scale(self, LATENT, scale_method, crop, modifier, TUPLE):
+    def scale(self, LATENT, scale_method, crop, modifier, TUPLE=(None, None)):
 
-        width = int(TUPLE[0] * modifier)
-        height = int(TUPLE[1] * modifier)
+        if TUPLE:
+            width = int(TUPLE[0] * modifier)
+            height = int(TUPLE[1] * modifier)
+        else:
+            width = LATENT["samples"][2]
+            height = LATENT["samples"][3]
 
         cls = LATENT.copy()
         cls["samples"] = comfy.utils.common_upscale(LATENT["samples"], width // 8, height // 8, scale_method, crop)
@@ -111,3 +115,59 @@ class LatentScale_Side:
         cls = LATENT.copy()
         cls["samples"] = comfy.utils.common_upscale(LATENT["samples"], width // 8, height // 8, scale_method, crop)
         return (cls, (width, height),)
+
+  # 3rd option with both sides manually
+
+class LatentComposite_MOD:
+    def __init__(self):
+        pass
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "SAMPLES_FROM": (type.LATENT,),
+                "SAMPLES_TO": (type.LATENT,),
+                "TUPLE_POSITION": (type.TUPLE,),
+                "FEATHER": field.INT,
+            }
+        }
+
+    RETURN_TYPES = (type.LATENT, type.FLOAT,)
+    FUNCTION = "compose"
+    CATEGORY = TREE_LATENTS
+
+    def compose(self, SAMPLES_FROM, SAMPLES_TO, TUPLE_POSITION, FEATHER):
+        x_off = int(TUPLE_POSITION[0] // 8)
+        y_off = int(TUPLE_POSITION[1] // 8)
+        feather = FEATHER // 8
+
+        samples_out = SAMPLES_TO.copy()
+        samples = SAMPLES_TO["samples"].clone()
+
+        samples_to = SAMPLES_TO["samples"]
+        samples_from = SAMPLES_FROM["samples"]
+
+        if feather == 0:
+            samples[:, :, y_off:y_off + samples_from.shape[2], x_off:x_off + samples_from.shape[3]] = \
+               samples_from[:, :, :samples_to.shape[2] - y_off, :samples_to.shape[3] - x_off]
+        else:
+            samples_from = samples_from[:, :, :samples_to.shape[2] - y_off, :samples_to.shape[3] - x_off]
+            mask = torch.ones_like(samples_from)
+            for t in range(feather):
+                if y_off != 0:
+                    mask[:, :, t:1 + t, :] *= ((1.0 / feather) * (t + 1))
+
+                if y_off + samples_from.shape[2] < samples_to.shape[2]:
+                    mask[:, :, mask.shape[2] - 1 - t: mask.shape[2] - t, :] *= ((1.0 / feather) * (t + 1))
+                if x_off != 0:
+                    mask[:, :, :, t:1 + t] *= ((1.0 / feather) * (t + 1))
+                if x_off + samples_from.shape[3] < samples_to.shape[3]:
+                    mask[:, :, :, mask.shape[3] - 1 - t: mask.shape[3] - t] *= ((1.0 / feather) * (t + 1))
+            rev_mask = torch.ones_like(mask) - mask
+            samples[:, :, y_off:y_off + samples_from.shape[2], x_off:x_off + samples_from.shape[3]] = \
+                samples_from[:, :, :samples_to.shape[2] - y_off, :samples_to.shape[3] - x_off] * \
+                mask + samples[:, :, y_off:y_off + samples_from.shape[2], x_off:x_off + samples_from.shape[3]] *\
+                rev_mask
+        samples_out["samples"] = samples
+        return (samples_out, FEATHER,)

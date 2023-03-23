@@ -13,13 +13,13 @@ class TeplateNode
                         "max": 1,
                         "step": 0.01
                     }),
-                "NODE_INPUT_NAME": ("FLOAT",)
+                "FIELD_INPUT_NAME": ("FLOAT",)
             }
         }
 
-    RETURN_TYPES = 0
-    FUNCTION = "get_value"
-    CATEGORY = "ABS"
+    RETURN_TYPES = ("FLOAT", "TUPLE")
+    FUNCTION = "function_name"
+    CATEGORY = "path/to/node"
 
-    def get_value(self, ):
-        return (None,)
+    def function_name(self, SLIDER_INPUT_NAME, FIELD_INPUT_NAME):
+        return (VALUE_A, VALUE_B,)

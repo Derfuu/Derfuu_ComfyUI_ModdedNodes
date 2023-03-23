@@ -29,6 +29,7 @@ NODE_CLASS_MAPPINGS = {
 
     "Float2Tuple_DF": TupleNodes.Float2Tuple,
     "Tuple2Float_DF": TupleNodes.Tuple2Float,
+    "FlipTuple_DF": TupleNodes.FlipTuple,
 
     "Int2Float_DF": ConvNodes.Int2Float,
     "CeilNode_DF": ConvNodes.CeilNode,
@@ -52,6 +53,7 @@ NODE_CLASS_MAPPINGS = {
     "EmptyLatentImage_DF": LatentNodes.EmptyLatentImage,
     "LatentScale_Ratio_DF": LatentNodes.LatentScale_Ratio,
     "LatentScale_Side_DF": LatentNodes.LatentScale_Side,
+    "LatentComposite_DV": LatentNodes.LatentComposite_MOD,
 
     "ImageScale_Ratio_DF": ImageNodes.ImageScale_Ratio,
     "ImageScale_Side_DF": ImageNodes.ImageScale_Side,
