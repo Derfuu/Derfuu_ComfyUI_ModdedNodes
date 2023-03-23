@@ -1,0 +1,25 @@
+class TeplateNode
+    def __init__(self):
+        pass
+
+    @classmethod
+    def INPUT_TYPES(self):
+        return {
+            "required": {
+                "SLIDER_INPUT_NAME": ("FLOAT",
+                    {
+                        "default": 0,
+                        "min": -1,
+                        "max": 1,
+                        "step": 0.01
+                    }),
+                "NODE_INPUT_NAME": ("FLOAT",)
+            }
+        }
+
+    RETURN_TYPES = 0
+    FUNCTION = "get_value"
+    CATEGORY = "ABS"
+
+    def get_value(self, ):
+        return (None,)
