@@ -1,6 +1,6 @@
 import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Custom.Types as TypeNodes
 
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Debug.debugNodes as DebugNodes
+import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Debug.Debug as DebugNodes
 
 import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Functions.Converters as ConvNodes
 import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Functions.GetSizes as GetSizes
@@ -53,7 +53,7 @@ NODE_CLASS_MAPPINGS = {
     "EmptyLatentImage_DF": LatentNodes.EmptyLatentImage,
     "LatentScale_Ratio_DF": LatentNodes.LatentScale_Ratio,
     "LatentScale_Side_DF": LatentNodes.LatentScale_Side,
-    "LatentComposite_DV": LatentNodes.LatentComposite_MOD,
+    "LatentComposite_DF": LatentNodes.LatentComposite,
 
     "ImageScale_Ratio_DF": ImageNodes.ImageScale_Ratio,
     "ImageScale_Side_DF": ImageNodes.ImageScale_Side,

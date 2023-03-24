@@ -1,4 +1,4 @@
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Debug.debugNodes as DebugNodes
+import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Debug.Debug as DebugNodes
 
 NODE_CLASS_MAPPINGS = {
     "FloatDebugPrint_DF": DebugNodes.DebugNodeFloat,

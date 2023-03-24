@@ -1,4 +1,5 @@
 import custom_nodes.Derfuu_ComfyUI_CustomNodes.components.types as type
+import custom_nodes.Derfuu_ComfyUI_CustomNodes.components.fields as field
 from custom_nodes.Derfuu_ComfyUI_CustomNodes.components.tree import TREE_DEBUG
 
 class DebugNodeFloat:
@@ -9,6 +10,7 @@ class DebugNodeFloat:
     def INPUT_TYPES(cls):
         return {
             "required": {
+                "TITLE": field.STRING,
                 "FLOAT": (type.FLOAT,),
             }
         }
@@ -18,8 +20,8 @@ class DebugNodeFloat:
     FUNCTION = "print_values"
     OUTPUT_NODE = True
 
-    def print_values(self, FLOAT):
-        print(FLOAT, sep="\n")
+    def print_values(self, FLOAT, TITLE):
+        print(f"{TITLE}: {FLOAT}", sep="\n")
         return (None,)
 
 
@@ -31,6 +33,7 @@ class DebugNodeInt:
     def INPUT_TYPES(cls):
         return {
             "required": {
+                "TITLE": field.STRING,
                 "INTEGER": (type.INT,),
             }
         }
@@ -40,8 +43,8 @@ class DebugNodeInt:
     FUNCTION = "print_values"
     OUTPUT_NODE = True
 
-    def print_values(self, INTEGER):
-        print(INTEGER, sep="\n")
+    def print_values(self, INTEGER, TITLE):
+        print(f"{TITLE}: {INTEGER}", sep="\n")
         return (None,)
 
 
@@ -53,6 +56,7 @@ class DebugNodeTuple:
     def INPUT_TYPES(cls):
         return {
             "required": {
+                "TITLE": field.STRING,
                 "TUPLE": (type.TUPLE,),
             }
         }
@@ -62,6 +66,6 @@ class DebugNodeTuple:
     FUNCTION = "print_values"
     OUTPUT_NODE = True
 
-    def print_values(self, TUPLE):
-        print(TUPLE, sep="\n")
+    def print_values(self, TUPLE, TITLE):
+        print(f"{TITLE}: {TUPLE}", sep="\n")
         return (None,)

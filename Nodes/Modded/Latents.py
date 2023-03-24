@@ -58,7 +58,7 @@ class LatentScale_Ratio:
 
     def scale(self, LATENT, scale_method, crop, modifier, TUPLE=(None, None)):
 
-        if TUPLE:
+        if TUPLE != (None, None):
             width = int(TUPLE[0] * modifier)
             height = int(TUPLE[1] * modifier)
         else:
@@ -118,7 +118,7 @@ class LatentScale_Side:
 
   # 3rd option with both sides manually
 
-class LatentComposite_MOD:
+class LatentComposite:
     def __init__(self):
         pass
 
