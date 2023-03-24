@@ -1,5 +1,5 @@
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Math.SimpleMath as Math_A
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Math.Trigonometry as Math_B
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Math.SimpleMath as Math_A
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Math.Trigonometry as Math_B
 
 
 NODE_CLASS_MAPPINGS = {

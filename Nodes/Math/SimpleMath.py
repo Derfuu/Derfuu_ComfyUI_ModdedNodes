@@ -1,7 +1,7 @@
 import math
 
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.components.types as type
-from custom_nodes.Derfuu_ComfyUI_CustomNodes.components.tree import TREE_MATH
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.types as type
+from custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.tree import TREE_MATH
 
 
 class MultiplyNode:

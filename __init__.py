@@ -1,18 +1,18 @@
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Custom.Types as TypeNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Custom.Types as TypeNodes
 
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Debug.Debug as DebugNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Debug.Debug as DebugNodes
 
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Functions.Converters as ConvNodes
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Functions.GetSizes as GetSizes
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Functions.Random as RendNodes
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Functions.Tuples as TupleNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Functions.Converters as ConvNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Functions.GetSizes as GetSizes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Functions.Random as RandNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Functions.Tuples as TupleNodes
 
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Math.SimpleMath as SMath
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Math.Trigonometry as TMath
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Math.SimpleMath as SMath
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Math.Trigonometry as TMath
 
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Modded.Images as ImageNodes
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Modded.Latents as LatentNodes
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Modded.Condotionig as CondNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Modded.Images as ImageNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Modded.Latents as LatentNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Modded.Condotionig as CondNodes
 
 NODE_CLASS_MAPPINGS = {
     "FloatNode_DF": TypeNodes.FloatNode,
@@ -25,7 +25,7 @@ NODE_CLASS_MAPPINGS = {
     "IntDebugPrint_DF": DebugNodes.DebugNodeInt,
     "TupleDebugPrint_DF": DebugNodes.DebugNodeTuple,
 
-    "RandomFloat_DF": RendNodes.RandomValue,
+    "RandomFloat_DF": RandNodes.RandomValue,
 
     "Float2Tuple_DF": TupleNodes.Float2Tuple,
     "Tuple2Float_DF": TupleNodes.Tuple2Float,

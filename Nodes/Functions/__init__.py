@@ -1,7 +1,7 @@
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Functions.Converters as ConvNodes
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Functions.GetSizes as GetSizes
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Functions.Random as RendNodes
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Functions.Tuples as TupleNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Functions.Converters as ConvNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Functions.GetSizes as GetSizes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Functions.Random as RendNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Functions.Tuples as TupleNodes
 
 
 NODE_CLASS_MAPPINGS = {

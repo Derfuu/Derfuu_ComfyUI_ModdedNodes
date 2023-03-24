@@ -1,4 +1,4 @@
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Custom.Types as TypeNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Custom.Types as TypeNodes
 
 NODE_CLASS_MAPPINGS = {
     "FloatNode_DF": TypeNodes.FloatNode,

@@ -1,6 +1,6 @@
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Modded.Images as ImageNodes
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Modded.Latents as LatentNodes
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.Nodes.Modded.Condotionig as CondNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Modded.Images as ImageNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Modded.Latents as LatentNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Modded.Condotionig as CondNodes
 
 
 NODE_CLASS_MAPPINGS = {

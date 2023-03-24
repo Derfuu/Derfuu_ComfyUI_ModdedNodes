@@ -1,9 +1,9 @@
 import numpy.random
 
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.components.types as type
-import custom_nodes.Derfuu_ComfyUI_CustomNodes.components.fields as field
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.types as type
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.fields as field
 
-from custom_nodes.Derfuu_ComfyUI_CustomNodes.components.tree import TREE_FUNCTIONS
+from custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.tree import TREE_FUNCTIONS
 
 
 class RandomValue:
