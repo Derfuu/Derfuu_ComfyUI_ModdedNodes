@@ -24,8 +24,8 @@ class Float2Tuple:
 
     FUNCTION = 'get_tuple'
 
-    def get_tuple(self, FLOAT_A=0, FLOAT_B=0, Ceil2Int="false"):
-        if Ceil2Int == "true":
+    def get_tuple(self, FLOAT_A=0, FLOAT_B=0, Ceil2Int=False):
+        if Ceil2Int == True:
             FLOAT_A = math.ceil(FLOAT_A)
             FLOAT_B = math.ceil(FLOAT_B)
         return ((FLOAT_A, FLOAT_B),)
