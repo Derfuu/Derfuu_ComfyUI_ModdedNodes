@@ -1,7 +1,6 @@
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.types as type
-
 import math
 
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.fields as field
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.tree import TREE_CONVERTERS
 
 
@@ -13,11 +12,11 @@ class Int2Float:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "INT": (type.INT,),
+                "INT": field.INT,
             }
         }
 
-    RETURN_TYPES = (type.FLOAT,)
+    RETURN_TYPES = ("FLOAT",)
     FUNCTION = "get_value"
     CATEGORY = TREE_CONVERTERS
 
@@ -33,11 +32,11 @@ class CeilNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "FLOAT": (type.FLOAT,),
+                "FLOAT": field.FLOAT,
             }
         }
 
-    RETURN_TYPES = (type.INT,)
+    RETURN_TYPES = ("INT",)
     FUNCTION = "get_value"
     CATEGORY = TREE_CONVERTERS
 
@@ -54,11 +53,11 @@ class FloorNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "FLOAT": (type.FLOAT,),
+                "FLOAT": field.FLOAT,
             }
         }
 
-    RETURN_TYPES = (type.INT,)
+    RETURN_TYPES = ("INT",)
     FUNCTION = "get_value"
     CATEGORY = TREE_CONVERTERS
 
@@ -75,12 +74,12 @@ class ABSNode:
     def INPUT_TYPES(self):
         return {
             "required": {
-                "FLOAT": (type.FLOAT,),
+                "FLOAT": field.FLOAT,
                 "IsNegative": ([False, True],)
             }
         }
 
-    RETURN_TYPES = (type.FLOAT,)
+    RETURN_TYPES = ("FLOAT",)
     FUNCTION = "abs_val"
     CATEGORY = TREE_CONVERTERS
 

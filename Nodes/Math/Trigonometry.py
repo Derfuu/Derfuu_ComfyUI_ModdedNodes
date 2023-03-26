@@ -1,4 +1,4 @@
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.types as type
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.fields as field
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.tree import TREE_TRIGONOMETRY
 
 import math
@@ -11,13 +11,13 @@ class SinNode:
     def INPUT_TYPES(self):
         return {
             "required": {
-                "FLOAT": (type.FLOAT,),
+                "FLOAT": field.FLOAT,
                 "INPUT_TYPE": (["RAD", "DEG"],),
                 "arcSin": ([False, True],)
             }
         }
 
-    RETURN_TYPES = (type.FLOAT,)
+    RETURN_TYPES = ("FLOAT",)
     FUNCTION = "get_value"
     CATEGORY = TREE_TRIGONOMETRY
 
@@ -39,13 +39,13 @@ class CosNode:
     def INPUT_TYPES(self):
         return {
             "required": {
-                "FLOAT": (type.FLOAT,),
+                "FLOAT": field.FLOAT,
                 "INPUT_TYPE": (["RAD", "DEG"],),
                 "arcCos": ([False, True],)
             }
         }
 
-    RETURN_TYPES = (type.FLOAT,)
+    RETURN_TYPES = ("FLOAT",)
     FUNCTION = "get_value"
     CATEGORY = TREE_TRIGONOMETRY
 
@@ -67,13 +67,13 @@ class tgNode:
     def INPUT_TYPES(self):
         return {
             "required": {
-                "FLOAT": (type.FLOAT,),
+                "FLOAT": field.FLOAT,
                 "INPUT_TYPE": (["RAD", "DEG"],),
                 "arcTan": ([False, True],)
             }
         }
 
-    RETURN_TYPES = (type.FLOAT,)
+    RETURN_TYPES = ("FLOAT",)
     FUNCTION = "get_value"
     CATEGORY = TREE_TRIGONOMETRY
 

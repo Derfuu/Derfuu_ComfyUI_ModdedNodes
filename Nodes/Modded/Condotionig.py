@@ -1,4 +1,3 @@
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.types as type
 import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.fields as field
 
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.tree import TREE_COND
@@ -12,14 +11,14 @@ class ConditioningSetArea_MOD:
     def INPUT_TYPES(self):
         return {
             "required": {
-                "CONDITIONING": (type.COND,),
-                "SIZE_TUPLE": (type.TUPLE,),
-                "OFFSET_TUPLE": (type.TUPLE,),
+                "CONDITIONING": ("CONDITIONING",),
+                "SIZE_TUPLE": ("TUPLE",),
+                "OFFSET_TUPLE": ("TUPLE",),
                 "STRENGTH": field.FLOAT,
             }
         }
 
-    RETURN_TYPES = (type.COND, type.TUPLE, type.TUPLE,)
+    RETURN_TYPES = ("CONDITIONING",)
     FUNCTION = "append"
     CATEGORY = TREE_COND
 
@@ -40,17 +39,4 @@ class ConditioningSetArea_MOD:
             n[1]['min_sigma'] = min_sigma
             n[1]['max_sigma'] = max_sigma
             c.append(n)
-        return (c, (width, height), (x, y),)
-
-
-class ConditioningSetAreaExt_MOD(ConditioningSetArea_MOD):
-    @classmethod
-    def INPUT_TYPES(self):
-        return {
-            "required": {
-                "CONDITIONING": (type.COND,),
-                "SIZE_TUPLE": (type.TUPLE,),
-                "OFFSET_TUPLE": (type.TUPLE,),
-                "STRENGTH": (type.FLOAT,),
-            }
-        }
+        return (c,)

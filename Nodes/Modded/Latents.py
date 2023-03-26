@@ -1,13 +1,13 @@
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.types as type
 import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.fields as field
 
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.tree import TREE_LATENTS
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.sizes as sizes
 
 import math
 import torch
 import comfy.utils
 
-
+ # DO NOT USE, MAY BREAK ALL
 class EmptyLatentImage:
     def __init__(self, device="cpu"):
         self.device = device
@@ -16,12 +16,12 @@ class EmptyLatentImage:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "TUPLE": (type.TUPLE,),
+                "TUPLE": ("TUPLE",),
                 "batch_size": field.INT,
             }
         }
 
-    RETURN_TYPES = (type.LATENT,)
+    RETURN_TYPES = ("LATENT",)
     FUNCTION = "generate"
     CATEGORY = TREE_LATENTS
 
@@ -44,30 +44,34 @@ class LatentScale_Ratio:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "LATENT": (type.LATENT,),
-                "TUPLE": (type.TUPLE,),
+                "LATENT": ("LATENT",),
                 "modifier": field.FLOAT,
                 "scale_method": cls.scale_methods,
                 "crop": cls.crop_methods,
             }
         }
 
-    RETURN_TYPES = (type.LATENT, type.TUPLE,)
+    RETURN_TYPES = ("LATENT",)
     FUNCTION = "scale"
     CATEGORY = TREE_LATENTS
 
     def scale(self, LATENT, scale_method, crop, modifier, TUPLE=(None, None)):
 
+        size = sizes.get_latent_size(LATENT, True)
+
+        lat_width = size[0]
+        lat_height = size[1]
+
         if TUPLE != (None, None):
-            width = int(TUPLE[0] * modifier)
-            height = int(TUPLE[1] * modifier)
+            width = int(lat_width * modifier)
+            height = int(lat_height * modifier)
         else:
             width = LATENT["samples"][2]
             height = LATENT["samples"][3]
 
         cls = LATENT.copy()
         cls["samples"] = comfy.utils.common_upscale(LATENT["samples"], width // 8, height // 8, scale_method, crop)
-        return (cls, (width, height),)
+        return (cls,)
 
 
 class LatentScale_Side:
@@ -81,31 +85,33 @@ class LatentScale_Side:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "LATENT": (type.LATENT,),
-                "TUPLE": (type.TUPLE,),
+                "LATENT": ("LATENT",),
                 "side_length": field.INT,
                 "side": (["Width", "Height"],),
                 "scale_method": (cls.upscale_methods,),
                 "crop": (cls.crop_methods,)}}
 
-    RETURN_TYPES = (type.LATENT, type.TUPLE,)
+    RETURN_TYPES = ("LATENT",)
     FUNCTION = "upscale"
 
     CATEGORY = TREE_LATENTS
 
-    def upscale(self, LATENT, scale_method, TUPLE, side_length, side, crop):
-        width_B = int(TUPLE[0])
-        height_B = int(TUPLE[1])
+    def upscale(self, LATENT, side_length, side, scale_method, crop):
 
-        width = width_B
-        height = height_B
+        size = sizes.get_latent_size(LATENT, True)
+
+        lat_width = size[0]
+        lat_height = size[1]
+
+        width = lat_width
+        height = lat_height
 
         if side == "Width":
-            heigh_ratio = height_B / width_B
+            heigh_ratio = lat_height / lat_width
             width = side_length
             height = heigh_ratio * width
         elif side == "Height":
-            width_ratio = width_B / height_B
+            width_ratio = lat_width / lat_height
             height = side_length
             width = width_ratio * height
 
@@ -114,7 +120,7 @@ class LatentScale_Side:
 
         cls = LATENT.copy()
         cls["samples"] = comfy.utils.common_upscale(LATENT["samples"], width // 8, height // 8, scale_method, crop)
-        return (cls, (width, height),)
+        return (cls,)
 
   # 3rd option with both sides manually
 
@@ -126,14 +132,14 @@ class LatentComposite:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "SAMPLES_FROM": (type.LATENT,),
-                "SAMPLES_TO": (type.LATENT,),
-                "TUPLE_POSITION": (type.TUPLE,),
+                "SAMPLES_FROM": ("LATENT",),
+                "SAMPLES_TO": ("LATENT",),
+                "TUPLE_POSITION": ("TUPLE",),
                 "FEATHER": field.INT,
             }
         }
 
-    RETURN_TYPES = (type.LATENT, type.FLOAT,)
+    RETURN_TYPES = ("LATENT",)
     FUNCTION = "compose"
     CATEGORY = TREE_LATENTS
 
@@ -170,4 +176,4 @@ class LatentComposite:
                 mask + samples[:, :, y_off:y_off + samples_from.shape[2], x_off:x_off + samples_from.shape[3]] *\
                 rev_mask
         samples_out["samples"] = samples
-        return (samples_out, FEATHER,)
+        return (samples_out,)

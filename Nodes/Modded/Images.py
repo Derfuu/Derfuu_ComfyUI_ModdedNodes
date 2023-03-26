@@ -1,4 +1,3 @@
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.types as type
 import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.fields as field
 
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.tree import TREE_IMAGES
@@ -15,13 +14,13 @@ class ImageScale_Ratio:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "IMAGE": (type.IMAGE,),
-                "TUPLE": (type.TUPLE,),
+                "IMAGE": ("IMAGE",),
+                "TUPLE": ("TUPLE",),
                 "modifier": field.FLOAT,
                 "upscale_method": (cls.upscale_methods,),
                 "crop": (cls.crop_methods,)}}
 
-    RETURN_TYPES = (type.IMAGE, type.TUPLE,)
+    RETURN_TYPES = ("IMAGE",)
     FUNCTION = "upscale"
 
     CATEGORY = TREE_IMAGES
@@ -36,7 +35,7 @@ class ImageScale_Ratio:
         width = math.ceil(width_B * modifier)
         cls = comfy.utils.common_upscale(samples, width, height, upscale_method, crop)
         cls = cls.movedim(1, -1)
-        return (cls, (width, height),)
+        return (cls,)
 
 
 class ImageScale_Side:
@@ -50,14 +49,14 @@ class ImageScale_Side:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "IMAGE": (type.IMAGE,),
-                "TUPLE": (type.TUPLE,),
+                "IMAGE": ("IMAGE",),
+                "TUPLE": ("TUPLE",),
                 "side_length": field.INT,
                 "side": (["Width", "Height"],),
                 "upscale_method": (cls.upscale_methods,),
                 "crop": (cls.crop_methods,)}}
 
-    RETURN_TYPES = (type.IMAGE, type.TUPLE,)
+    RETURN_TYPES = ("IMAGE",)
     FUNCTION = "upscale"
 
     CATEGORY = TREE_IMAGES
@@ -85,4 +84,4 @@ class ImageScale_Side:
 
         cls = comfy.utils.common_upscale(samples, width, height, upscale_method, crop)
         cls = cls.movedim(1, -1)
-        return (cls, (width, height), )
+        return (cls,)

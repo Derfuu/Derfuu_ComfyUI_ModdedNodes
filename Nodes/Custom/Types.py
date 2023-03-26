@@ -1,5 +1,4 @@
 import math
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.types as type
 import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.fields as field
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.tree import TREE_VARIABLE
 
@@ -15,7 +14,7 @@ class FloatNode:
             },
         }
 
-    RETURN_TYPES = (type.FLOAT,)
+    RETURN_TYPES = ("FLOAT",)
     CATEGORY = TREE_VARIABLE
     FUNCTION = "get_value"
 
@@ -35,7 +34,7 @@ class IntegerNode:
             },
         }
 
-    RETURN_TYPES = (type.INT,)
+    RETURN_TYPES = ("INT",)
     CATEGORY = TREE_VARIABLE
     FUNCTION = "get_value"
 
@@ -57,7 +56,7 @@ class TupleNode:
             }
         }
 
-    RETURN_TYPES = (type.TUPLE,)
+    RETURN_TYPES = ("TUPLE",)
     CATEGORY = TREE_VARIABLE
 
     FUNCTION = 'get_value'
@@ -81,7 +80,7 @@ class StringNode:
             }
         }
 
-    RETURN_TYPES = (type.STRING,)
+    RETURN_TYPES = ("STRING",)
     FUNCTION = "get_value"
     CATEGORY = TREE_VARIABLE
 
@@ -97,11 +96,14 @@ class MultilineStringNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "VALUE": field.STRING_ML,
+                "VALUE": ("STRING", {
+                    "default": "",
+                    "multiline": True,
+                }),
             }
         }
 
-    RETURN_TYPES = (type.STRING,)
+    RETURN_TYPES = ("STRING",)
     FUNCTION = "get_value"
     CATEGORY = TREE_VARIABLE
 

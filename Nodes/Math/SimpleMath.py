@@ -1,6 +1,6 @@
 import math
 
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.types as type
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.fields as field
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.tree import TREE_MATH
 
 
@@ -12,12 +12,12 @@ class MultiplyNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "FLOAT_A": (type.FLOAT,),
-                "FLOAT_B": (type.FLOAT,),
+                "FLOAT_A": field.FLOAT,
+                "FLOAT_B": field.FLOAT,
             },
         }
 
-    RETURN_TYPES = (type.FLOAT,)
+    RETURN_TYPES = ("FLOAT",)
     FUNCTION = "multiply"
     CATEGORY = TREE_MATH
 
@@ -34,12 +34,12 @@ class DivideNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "FLOAT_A": (type.FLOAT,),
-                "FLOAT_B": (type.FLOAT,),
+                "FLOAT_A": field.FLOAT,
+                "FLOAT_B": field.FLOAT,
             },
         }
 
-    RETURN_TYPES = (type.FLOAT,)
+    RETURN_TYPES = ("FLOAT",)
     FUNCTION = "divide"
     CATEGORY = TREE_MATH
 
@@ -56,12 +56,12 @@ class SumNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "FLOAT_A": (type.FLOAT,),
-                "FLOAT_B": (type.FLOAT,),
+                "FLOAT_A": field.FLOAT,
+                "FLOAT_B": field.FLOAT,
             },
         }
 
-    RETURN_TYPES = (type.FLOAT,)
+    RETURN_TYPES = ("FLOAT",)
     FUNCTION = "sum"
     CATEGORY = TREE_MATH
 
@@ -78,12 +78,12 @@ class SubtractNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "FLOAT_A": (type.FLOAT,),
-                "FLOAT_B": (type.FLOAT,),
+                "FLOAT_A": field.FLOAT,
+                "FLOAT_B": field.FLOAT,
             },
         }
 
-    RETURN_TYPES = (type.FLOAT,)
+    RETURN_TYPES = ("FLOAT",)
     FUNCTION = "sub"
     CATEGORY = TREE_MATH
 
@@ -100,12 +100,12 @@ class PowNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "FLOAT_A": (type.FLOAT,),
-                "FLOAT_B": (type.FLOAT,),
+                "FLOAT_A": field.FLOAT,
+                "FLOAT_B": field.FLOAT,
             },
         }
 
-    RETURN_TYPES = (type.FLOAT,)
+    RETURN_TYPES = ("FLOAT",)
     FUNCTION = "sub"
     CATEGORY = TREE_MATH
 
@@ -122,11 +122,11 @@ class SquareRootNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "FLOAT": (type.FLOAT,),
+                "FLOAT": field.FLOAT,
             },
         }
 
-    RETURN_TYPES = (type.FLOAT,)
+    RETURN_TYPES = ("FLOAT",)
     FUNCTION = "sub"
     CATEGORY = TREE_MATH
 

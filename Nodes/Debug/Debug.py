@@ -1,4 +1,3 @@
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.types as type
 import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.fields as field
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.tree import TREE_DEBUG
 
@@ -11,7 +10,7 @@ class DebugNodeFloat:
         return {
             "required": {
                 "TITLE": field.STRING,
-                "FLOAT": (type.FLOAT,),
+                "FLOAT": field.FLOAT,
             }
         }
 
@@ -34,7 +33,7 @@ class DebugNodeInt:
         return {
             "required": {
                 "TITLE": field.STRING,
-                "INTEGER": (type.INT,),
+                "INTEGER": field.INT,
             }
         }
 
@@ -57,7 +56,7 @@ class DebugNodeTuple:
         return {
             "required": {
                 "TITLE": field.STRING,
-                "TUPLE": (type.TUPLE,),
+                "TUPLE": ("TUPLE",),
             }
         }
 
@@ -79,7 +78,7 @@ class DebugNodeString:
         return {
             "required": {
                 "TITLE": field.STRING,
-                "STRING": (type.STRING,),
+                "STRING": field.STRING,
             }
         }
 

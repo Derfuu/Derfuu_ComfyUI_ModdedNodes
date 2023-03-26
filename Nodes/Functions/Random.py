@@ -1,6 +1,5 @@
 import numpy.random
 
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.types as type
 import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.fields as field
 
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.tree import TREE_FUNCTIONS
@@ -19,7 +18,7 @@ class RandomValue:
             }
         }
 
-    RETURN_TYPES = (type.FLOAT,)
+    RETURN_TYPES = ("FLOAT",)
     FUNCTION = "get_rand"
     CATEGORY = TREE_FUNCTIONS
 
