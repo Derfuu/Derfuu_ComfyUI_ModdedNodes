@@ -24,6 +24,7 @@ NODE_CLASS_MAPPINGS = {
     "FloatDebugPrint_DF": DebugNodes.DebugNodeFloat,
     "IntDebugPrint_DF": DebugNodes.DebugNodeInt,
     "TupleDebugPrint_DF": DebugNodes.DebugNodeTuple,
+    "StringDebugPrint_DF": DebugNodes.DebugNodeString,
 
     "RandomFloat_DF": RandNodes.RandomValue,
 

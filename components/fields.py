@@ -1,6 +1,6 @@
 import sys
 
-FLOAT = ("FLOAT", {"default": 0,
+FLOAT = ("FLOAT", {"default": 1,
                    "min": -sys.float_info.max,
                    "max": sys.float_info.max,
                    "step": 0.01})

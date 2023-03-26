@@ -69,3 +69,25 @@ class DebugNodeTuple:
     def print_values(self, TUPLE, TITLE):
         print(f"{TITLE}: {TUPLE}", sep="\n")
         return (None,)
+
+class DebugNodeString:
+    def __init__(self):
+        pass
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "TITLE": field.STRING,
+                "STRING": (type.STRING,),
+            }
+        }
+
+    RETURN_TYPES = ()
+    CATEGORY = TREE_DEBUG
+    FUNCTION = "print_values"
+    OUTPUT_NODE = True
+
+    def print_values(self, STRING, TITLE):
+        print(f"{TITLE}: {STRING}", sep="\n")
+        return (None,)
