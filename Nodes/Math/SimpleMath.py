@@ -88,7 +88,7 @@ class SubtractNode:
     CATEGORY = TREE_MATH
 
     def sub(self, FLOAT_A, FLOAT_B):
-        total = float(FLOAT_A + FLOAT_B)
+        total = float(FLOAT_A - FLOAT_B)
         return (total,)
 
 

@@ -51,6 +51,26 @@ class Tuple2Float:
     def get_tuple(self, TUPLE):
         return (TUPLE[0], TUPLE[1],)
 
+class Tuple2Int:
+    def __init__(self) -> None:
+        pass
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "TUPLE": (type.TUPLE,),
+            }
+        }
+
+    RETURN_TYPES = (type.INT, type.INT,)
+    CATEGORY = TREE_FUNCTIONS
+
+    FUNCTION = 'get_tuple'
+
+    def get_tuple(self, TUPLE):
+        return (int(TUPLE[0]), int(TUPLE[1]),)
+
 
 class FlipTuple:
     def __init__(self):

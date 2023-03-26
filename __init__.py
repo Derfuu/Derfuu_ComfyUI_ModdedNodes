@@ -28,8 +28,9 @@ NODE_CLASS_MAPPINGS = {
     "RandomFloat_DF": RandNodes.RandomValue,
 
     "Float2Tuple_DF": TupleNodes.Float2Tuple,
-    "Tuple2Float_DF": TupleNodes.Tuple2Float,
     "FlipTuple_DF": TupleNodes.FlipTuple,
+    "Tuple2Float_DF": TupleNodes.Tuple2Float,
+    "Tuple2Int_DF": TupleNodes.Tuple2Int,
 
     "Int2Float_DF": ConvNodes.Int2Float,
     "CeilNode_DF": ConvNodes.CeilNode,
@@ -50,14 +51,14 @@ NODE_CLASS_MAPPINGS = {
     "CosNode_DF": TMath.CosNode,
     "TanNode_DF": TMath.tgNode,
 
-    "EmptyLatentImage_DF": LatentNodes.EmptyLatentImage,
+    # "EmptyLatentImage_DF": LatentNodes.EmptyLatentImage,
     "LatentScale_Ratio_DF": LatentNodes.LatentScale_Ratio,
     "LatentScale_Side_DF": LatentNodes.LatentScale_Side,
-    "LatentComposite_DF": LatentNodes.LatentComposite,
+    # "LatentComposite_DF": LatentNodes.LatentComposite,
 
     "ImageScale_Ratio_DF": ImageNodes.ImageScale_Ratio,
     "ImageScale_Side_DF": ImageNodes.ImageScale_Side,
 
     "ConditioningSetArea_DF": CondNodes.ConditioningSetArea_MOD,
-    "ConditioningSetAreaEXT_DF": CondNodes.ConditioningSetAreaExt_MOD,
+    # "ConditioningSetAreaEXT_DF": CondNodes.ConditioningSetAreaExt_MOD,
 }
