@@ -10,9 +10,9 @@ import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Functions.Tuples as TupleNo
 import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Math.SimpleMath as SMath
 import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Math.Trigonometry as TMath
 
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Modded.StandartInputs.Images as St_ImageNodes
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Modded.StandartInputs.Latents as St_LatentNodes
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Modded.StandartInputs.Condotionig as St_CondNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Modded.StandardInputs.Images as St_ImageNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Modded.StandardInputs.Latents as St_LatentNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Modded.StandardInputs.Condotionig as St_CondNodes
 
 import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Modded.TuplesUsed.Latents as Tu_LatentNodes
 import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Modded.TuplesUsed.Conditioning as Tu_CondNodes
