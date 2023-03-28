@@ -12,7 +12,7 @@ class Int2Float:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "INT": field.INT,
+                "Value": field.INT,
             }
         }
 
@@ -20,8 +20,8 @@ class Int2Float:
     FUNCTION = "get_value"
     CATEGORY = TREE_CONVERTERS
 
-    def get_value(self, INT):
-        return (float(INT),)
+    def get_value(self, Value):
+        return (float(Value),)
 
 
 class CeilNode:
@@ -32,7 +32,7 @@ class CeilNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "FLOAT": field.FLOAT,
+                "Value": field.FLOAT,
             }
         }
 
@@ -40,8 +40,8 @@ class CeilNode:
     FUNCTION = "get_value"
     CATEGORY = TREE_CONVERTERS
 
-    def get_value(self, FLOAT):
-        total = int(math.ceil(FLOAT))
+    def get_value(self, Value):
+        total = int(math.ceil(Value))
         return (total,)
 
 
@@ -53,7 +53,7 @@ class FloorNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "FLOAT": field.FLOAT,
+                "Value": field.FLOAT,
             }
         }
 
@@ -61,8 +61,8 @@ class FloorNode:
     FUNCTION = "get_value"
     CATEGORY = TREE_CONVERTERS
 
-    def get_value(self, FLOAT):
-        total = int(math.floor(FLOAT))
+    def get_value(self, Value):
+        total = int(math.floor(Value))
         return (total,)
 
 
@@ -74,8 +74,8 @@ class ABSNode:
     def INPUT_TYPES(self):
         return {
             "required": {
-                "FLOAT": field.FLOAT,
-                "IsNegative": ([False, True],)
+                "Value": field.FLOAT,
+                "negative_out": ([False, True],)
             }
         }
 
@@ -83,7 +83,7 @@ class ABSNode:
     FUNCTION = "abs_val"
     CATEGORY = TREE_CONVERTERS
 
-    def abs_val(self, FLOAT, IsNegative):
-        if IsNegative:
-            return (-abs(FLOAT),)
-        return (abs(FLOAT),)
+    def abs_val(self, Value, Get_negative):
+        if Get_negative:
+            return (-abs(Value),)
+        return (abs(Value),)

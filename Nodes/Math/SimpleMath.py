@@ -12,8 +12,8 @@ class MultiplyNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "FLOAT_A": field.FLOAT,
-                "FLOAT_B": field.FLOAT,
+                "Value_A": field.FLOAT,
+                "Value_B": field.FLOAT,
             },
         }
 
@@ -21,8 +21,8 @@ class MultiplyNode:
     FUNCTION = "multiply"
     CATEGORY = TREE_MATH
 
-    def multiply(self, FLOAT_A, FLOAT_B):
-        total = float(FLOAT_A * FLOAT_B)
+    def multiply(self, Value_A, Value_B):
+        total = float(Value_A * Value_B)
         return (total,)
 
 
@@ -34,8 +34,8 @@ class DivideNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "FLOAT_A": field.FLOAT,
-                "FLOAT_B": field.FLOAT,
+                "Numerator": field.FLOAT,
+                "Denominator": field.FLOAT,
             },
         }
 
@@ -43,8 +43,8 @@ class DivideNode:
     FUNCTION = "divide"
     CATEGORY = TREE_MATH
 
-    def divide(self, FLOAT_A, FLOAT_B):
-        total = float(FLOAT_A / FLOAT_B)
+    def divide(self, Numerator, Denominator):
+        total = float(Numerator / Denominator)
         return (total,)
 
 
@@ -56,8 +56,8 @@ class SumNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "FLOAT_A": field.FLOAT,
-                "FLOAT_B": field.FLOAT,
+                "Value_A": field.FLOAT,
+                "Value_B": field.FLOAT,
             },
         }
 
@@ -65,8 +65,8 @@ class SumNode:
     FUNCTION = "sum"
     CATEGORY = TREE_MATH
 
-    def sum(self, FLOAT_A, FLOAT_B):
-        total = float(FLOAT_A + FLOAT_B)
+    def sum(self, Value_A, Value_B):
+        total = float(Value_A + Value_B)
         return (total,)
 
 
@@ -78,8 +78,8 @@ class SubtractNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "FLOAT_A": field.FLOAT,
-                "FLOAT_B": field.FLOAT,
+                "Value_A": field.FLOAT,
+                "Value_B": field.FLOAT,
             },
         }
 
@@ -87,8 +87,8 @@ class SubtractNode:
     FUNCTION = "sub"
     CATEGORY = TREE_MATH
 
-    def sub(self, FLOAT_A, FLOAT_B):
-        total = float(FLOAT_A - FLOAT_B)
+    def sub(self, Value_A, Value_B):
+        total = float(Value_A - Value_B)
         return (total,)
 
 
@@ -100,17 +100,17 @@ class PowNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "FLOAT_A": field.FLOAT,
-                "FLOAT_B": field.FLOAT,
+                "Value": field.FLOAT,
+                "Exponent": field.FLOAT,
             },
         }
 
     RETURN_TYPES = ("FLOAT",)
-    FUNCTION = "sub"
+    FUNCTION = "pow"
     CATEGORY = TREE_MATH
 
-    def sub(self, FLOAT_A, FLOAT_B=2):
-        total = math.pow(FLOAT_A, FLOAT_B)
+    def pow(self, Value, Exponent):
+        total = math.pow(Value, Exponent)
         return (total,)
 
 
@@ -122,14 +122,14 @@ class SquareRootNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "FLOAT": field.FLOAT,
+                "Value": field.FLOAT,
             },
         }
 
-    RETURN_TYPES = ("FLOAT",)
-    FUNCTION = "sub"
+    RETURN_TYPES = ("FLOAT", "FLOAT",)
+    FUNCTION = "sqrt"
     CATEGORY = TREE_MATH
 
-    def sub(self, FLOAT):
-        total = math.sqrt(FLOAT)
-        return (total,)
+    def sqrt(self, Value):
+        total = math.sqrt(Value)
+        return (total, -total,)

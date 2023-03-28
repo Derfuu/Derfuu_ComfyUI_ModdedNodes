@@ -1,5 +1,6 @@
 import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.fields as field
 
+from custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.sizes import get_image_size
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.tree import TREE_IMAGES
 
 import math
@@ -14,9 +15,8 @@ class ImageScale_Ratio:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "IMAGE": ("IMAGE",),
-                "TUPLE": ("TUPLE",),
-                "modifier": field.FLOAT,
+                "image": ("IMAGE",),
+                "upscale_by": field.FLOAT,
                 "upscale_method": (cls.upscale_methods,),
                 "crop": (cls.crop_methods,)}}
 
@@ -25,14 +25,16 @@ class ImageScale_Ratio:
 
     CATEGORY = TREE_IMAGES
 
-    def upscale(self, IMAGE, upscale_method, TUPLE, modifier, crop):
-        samples = IMAGE.movedim(-1, 1)
+    def upscale(self, image, upscale_method, upscale_by, crop):
+        size = get_image_size(image)
 
-        width_B = int(TUPLE[0])
-        height_B = int(TUPLE[1])
+        width_B = int(size[0])
+        height_B = int(size[1])
 
-        height = math.ceil(height_B * modifier)
-        width = math.ceil(width_B * modifier)
+        samples = image.movedim(-1, 1)
+
+        height = math.ceil(height_B * upscale_by)
+        width = math.ceil(width_B * upscale_by)
         cls = comfy.utils.common_upscale(samples, width, height, upscale_method, crop)
         cls = cls.movedim(1, -1)
         return (cls,)
@@ -49,8 +51,7 @@ class ImageScale_Side:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "IMAGE": ("IMAGE",),
-                "TUPLE": ("TUPLE",),
+                "image": ("IMAGE",),
                 "side_length": field.INT,
                 "side": (["Width", "Height"],),
                 "upscale_method": (cls.upscale_methods,),
@@ -61,11 +62,13 @@ class ImageScale_Side:
 
     CATEGORY = TREE_IMAGES
 
-    def upscale(self, IMAGE, upscale_method, TUPLE, side_length, side, crop):
-        samples = IMAGE.movedim(-1, 1)
+    def upscale(self, image, upscale_method, side_length, side, crop):
+        samples = image.movedim(-1, 1)
 
-        width_B = int(TUPLE[0])
-        height_B = int(TUPLE[1])
+        size = get_image_size(image)
+
+        width_B = int(size[0])
+        height_B = int(size[1])
 
         width = width_B
         height = height_B

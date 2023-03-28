@@ -11,8 +11,8 @@ class SinNode:
     def INPUT_TYPES(self):
         return {
             "required": {
-                "FLOAT": field.FLOAT,
-                "INPUT_TYPE": (["RAD", "DEG"],),
+                "value": field.FLOAT,
+                "type_": (["RAD", "DEG"],),
                 "arcSin": ([False, True],)
             }
         }
@@ -21,14 +21,14 @@ class SinNode:
     FUNCTION = "get_value"
     CATEGORY = TREE_TRIGONOMETRY
 
-    def get_value(self, FLOAT, INPUT_TYPE="RAD", arcSin=False):
-        if INPUT_TYPE == "DEG":
-            FLOAT = math.radians(FLOAT)
+    def get_value(self, value, type_="RAD", arcSin=False):
+        if type_ == "DEG":
+            value = math.radians(value)
         if arcSin == True:
-            FLOAT = math.asin(FLOAT)
+            value = math.asin(value)
         else:
-            FLOAT = math.sin(FLOAT)
-        return (FLOAT,)
+            value = math.sin(value)
+        return (value,)
 
 
 class CosNode:
@@ -39,8 +39,8 @@ class CosNode:
     def INPUT_TYPES(self):
         return {
             "required": {
-                "FLOAT": field.FLOAT,
-                "INPUT_TYPE": (["RAD", "DEG"],),
+                "value": field.FLOAT,
+                "type_": (["RAD", "DEG"],),
                 "arcCos": ([False, True],)
             }
         }
@@ -49,14 +49,14 @@ class CosNode:
     FUNCTION = "get_value"
     CATEGORY = TREE_TRIGONOMETRY
 
-    def get_value(self, FLOAT, INPUT_TYPE="RAD", arcCos=False):
-        if INPUT_TYPE == "DEG":
-            FLOAT = math.radians(FLOAT)
+    def get_value(self, value, type_="RAD", arcCos=False):
+        if type_ == "DEG":
+            value = math.radians(value)
         if arcCos == True:
-            FLOAT = math.acos(FLOAT)
+            value = math.acos(value)
         else:
-            FLOAT = math.cos(FLOAT)
-        return (FLOAT,)
+            value = math.cos(value)
+        return (value,)
 
 
 class tgNode:
@@ -67,8 +67,8 @@ class tgNode:
     def INPUT_TYPES(self):
         return {
             "required": {
-                "FLOAT": field.FLOAT,
-                "INPUT_TYPE": (["RAD", "DEG"],),
+                "value": field.FLOAT,
+                "type_": (["RAD", "DEG"],),
                 "arcTan": ([False, True],)
             }
         }
@@ -77,11 +77,11 @@ class tgNode:
     FUNCTION = "get_value"
     CATEGORY = TREE_TRIGONOMETRY
 
-    def get_value(self, FLOAT, INPUT_TYPE="RAD", arcTan=False):
-        if INPUT_TYPE == "DEG":
-            FLOAT = math.radians(FLOAT)
+    def get_value(self, value, type_="RAD", arcTan=False):
+        if type_ == "DEG":
+            value = math.radians(value)
         if arcTan == True:
-            FLOAT = math.atan(FLOAT)
+            value = math.atan(value)
         else:
-            FLOAT = math.tan(FLOAT)
-        return (FLOAT,)
+            value = math.tan(value)
+        return (value,)
