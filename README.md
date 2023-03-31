@@ -43,7 +43,7 @@
   - Get image size - return image size like: Width, Height and (Width, Height) in one value as tuple
   - Get latent size - return latent size like: Width, Height and (Width, Height) in one value as tuple
     - NOTE: Original values are 8 times smaller
-  -Converters - converts one type to another
+  - Converters: converts one type to another
     - Int to float
     - Ceil - rounding up float value ex: 1.01 --> 2
     - Floor - rounding down float value ex: 1.99 --> 1

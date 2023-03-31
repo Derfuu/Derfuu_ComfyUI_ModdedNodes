@@ -22,7 +22,7 @@ class GetLatentSize:
 
     def get_size(self, latent, original):
         size = sizes.get_latent_size(latent, original)
-        return (size, size[0], size[1],)
+        return (size[0], size[1], size,)
 
 
 class GetImageSize:
@@ -44,4 +44,4 @@ class GetImageSize:
 
     def get_size(self, image):
         size = sizes.get_image_size(image)
-        return (size, size[0], size[1],)
+        return (size[0], size[1], size, )
