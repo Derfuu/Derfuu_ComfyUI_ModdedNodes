@@ -15,7 +15,7 @@ class Tuple:
             "required": {
                 "Value_A": field.FLOAT,
                 "Value_B": field.FLOAT,
-                "round": (["No", "Yes", "Ceil", "Floor"],),
+                "round_": (["No", "Yes", "Ceil", "Floor"],),
             }
         }
 
@@ -24,16 +24,25 @@ class Tuple:
 
     FUNCTION = 'get_tuple'
 
-    def get_tuple(self, Value_A=0, Value_B=0, round="No"):
-        match round:
-            case "No":
-                return ((Value_A, Value_B),)
-            case "Yes":
-                return ((int(Value_A), int(Value_B)),)
-            case "Ceil":
-                return ((math.ceil(Value_A), math.ceil(Value_B)),)
-            case "Floor":
-                return ((math.floor(Value_A), math.floor(Value_B)),)
+    def get_tuple(self, Value_A: float = 0, Value_B: float = 0, round_: str = "No"):
+        if round_ == "No":
+            return ((Value_A, Value_B),)
+        elif round_ == "Yes":
+            return ((round(Value_A), round(Value_B)),)
+        elif round_ == "Ceil":
+            return ((math.ceil(Value_A), math.ceil(Value_B)),)
+        elif round_ == "Floor":
+            return ((math.floor(Value_A), math.floor(Value_B)),)
+        # py 3.10+
+        # match round:
+        #     case "No":
+        #         return ((Value_A, Value_B),)
+        #     case "Yes":
+        #         return ((int(Value_A), int(Value_B)),)
+        #     case "Ceil":
+        #         return ((math.ceil(Value_A), math.ceil(Value_B)),)
+        #     case "Floor":
+        #         return ((math.floor(Value_A), math.floor(Value_B)),)
 
 
 class Int2Tuple:
