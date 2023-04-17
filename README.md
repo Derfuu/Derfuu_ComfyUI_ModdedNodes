@@ -51,7 +51,7 @@
 - Tuples (dead fetch?)
 - Maths
   - sum - (A + B)
-  - cubtract - (A - B)
+  - subtract - (A - B)
   - multiply (A * B)
   - divide - (A / B)
   - power - (A * A * A...) B times
