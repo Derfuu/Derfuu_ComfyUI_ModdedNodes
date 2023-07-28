@@ -36,11 +36,11 @@ class ConditioningAreaScale_Ratio:
                 c.append(n)
                 continue
 
-            height = int(size["h"] * 8 * modifier)
-            width = int(size["w"] * 8 * modifier)
+            height = int(size["height"] * 8 * modifier)
+            width = int(size["width"] * 8 * modifier)
 
-            y = int(offset["y"] * 8 * modifier)
-            x = int(offset["x"] * 8 * modifier)
+            y = int(offset["y_offset"] * 8 * modifier)
+            x = int(offset["x_offset"] * 8 * modifier)
 
             n[1]['area'] = (height // 8, width // 8, y // 8, x // 8)
             n[1]['strength'] *= strength_modifier

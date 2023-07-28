@@ -83,7 +83,7 @@ class LatentScale_Side:
             "required": {
                 "latent": ("LATENT",),
                 "side_length": field.INT,
-                "side": (["Width", "Height"],),
+                "side": (["Longest", "Width", "Height"],),
                 "scale_method": (cls.upscale_methods,),
                 "crop": (cls.crop_methods,)}}
 
@@ -92,7 +92,7 @@ class LatentScale_Side:
 
     CATEGORY = TREE_LATENTS
 
-    def upscale(self, latent, side_length, side, scale_method, crop):
+    def upscale(self, latent, side_length: int, side: str, scale_method, crop):
 
         size = sizes.get_latent_size(latent, True)
 
@@ -102,14 +102,26 @@ class LatentScale_Side:
         width = lat_width
         height = lat_height
 
-        if side == "Width":
-            heigh_ratio = lat_height / lat_width
-            width = side_length
-            height = heigh_ratio * width
-        elif side == "Height":
-            width_ratio = lat_width / lat_height
-            height = side_length
-            width = width_ratio * height
+        def determineSide(_side: str) -> tuple[int, int]:
+            width, height = 0, 0
+            if _side == "Width":
+                heigh_ratio = lat_height / lat_width
+                width = side_length
+                height = heigh_ratio * width
+            elif _side == "Height":
+                width_ratio = lat_width / lat_height
+                height = side_length
+                width = width_ratio * height
+            return width, height
+
+        if side == "Longest":
+            if width > height:
+                width, height = determineSide("Width")
+            else:
+                width, height = determineSide("Height")
+        else:
+            width, height = determineSide(side)
+
 
         width = math.ceil(width)
         height = math.ceil(height)

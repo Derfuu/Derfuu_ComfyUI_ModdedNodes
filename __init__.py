@@ -24,7 +24,7 @@ NODE_CLASS_MAPPINGS = {
     "Text": TypeNodes.StringNode,                               # IDK where to use this... yet
     "Text box": TypeNodes.MultilineStringNode,                  # This too
 
-    # NOTE: if input values are not changed, they don't print in console, same to random
+    # NOTE: if input values are not changed, they don't print in console, same to random IDK how to fix this yet
     "Float debug print": DebugNodes.DebugNodeFloat,
     "Int debug print": DebugNodes.DebugNodeInt,
     "Tuple debug print": DebugNodes.DebugNodeTuple,
@@ -37,6 +37,7 @@ NODE_CLASS_MAPPINGS = {
     "Tuple to floats": TupleNodes.Tuple2Float,                  # Return 2 floats from Tuple
     "Tuple to ints": TupleNodes.Tuple2Int,                      # Return 2 ints from Tuple
     "Tuple swap": TupleNodes.FlipTuple,                         # Swap Values in tuple
+    "Tuple multiply": TupleNodes.MultiplyTupleBy,
 
     "Int to float": ConvNodes.Int2Float,                        # Interpretation of int value as float
     "Ceil": ConvNodes.CeilNode,                                 # Rounds Value to next int

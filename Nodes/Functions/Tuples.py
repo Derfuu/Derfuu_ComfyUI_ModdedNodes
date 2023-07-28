@@ -129,42 +129,26 @@ class FlipTuple:
 
 
 
-# class MergeTuples:
-#     def __init__(self):
-#         pass
-#
-#     @classmethod
-#     def INPUT_TYPES(cls):
-#         return {
-#             "required": {
-#                 "TUPLE_A": ("TUPLE",),
-#                 "TUPLE_B": ("TUPLE",),
-#             }
-#         }
-#
-#     RETURN_TYPES = ("TUPLE",)
-#     FUNCTION = "merge"
-#     CATEGORY = TREE_TUPLES
-#
-#     def merge(self, TUPLE_A, TUPLE_B):
-#         return ((TUPLE_A, TUPLE_B),)
+class MultiplyTupleBy:
+    def __init__(self):
+        pass
 
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required":{
+                "Tuple": ("TUPLE",),
+                "Value": field.FLOAT,
+            }
+        }
 
-# class Tuple2Tuple:
-#     def __init__(self):
-#         pass
-#
-#     @classmethod
-#     def INPUT_TYPES(cls):
-#         return {
-#             "required": {
-#                 "TUPLE": ("TUPLE",),
-#             }
-#         }
-#
-#     RETURN_TYPES = ("TUPLE", "TUPLE",)
-#     FUNCTION = "spl"
-#     CATEGORY = TREE_TUPLES
-#
-#     def spl(self, TUPLE):
-#         return (TUPLE[0], TUPLE[1],)
+    RETURN_TYPES = ("TUPLE",)
+    FUNCTION = "MultiplyTuples"
+    CATEGORY = TREE_TUPLES
+
+    def MultiplyTuples(self, Tuple: tuple, Value: float):
+        Tuple = (
+            Tuple[0] * Value,
+            Tuple[1] * Value
+        )
+        return (Tuple,)

@@ -33,8 +33,8 @@ class IntegerNode:
             "required": {
                 "Value": ("FLOAT", {
                         "default": 1,
-                        "min": -sys.float_info.max,
-                        "max": sys.float_info.max,
+                        "min": -sys.maxsize,
+                        "max": sys.maxsize,
                         "step": 1
                     },
                 )

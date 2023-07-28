@@ -10,4 +10,4 @@ INT = ("INT", {"default": 1,
                "max": sys.maxsize,
                "step": 1})
 STRING = ("STRING", {"default": ""})
-STRING_ML = ("STRING", {"multiline": True})
+STRING_ML = ("STRING", {"multiline": True, "default": ""})
