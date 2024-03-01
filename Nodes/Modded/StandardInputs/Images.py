@@ -53,7 +53,7 @@ class ImageScale_Side:
             "required": {
                 "image": ("IMAGE",),
                 "side_length": field.INT,
-                "side": (["Longest", "Width", "Height"],),
+                "side": (["Longest", "Shortest", "Width", "Height"],),
                 "upscale_method": (cls.upscale_methods,),
                 "crop": (cls.crop_methods,)}}
 
@@ -90,6 +90,13 @@ class ImageScale_Side:
                 width, height = determineSide("Width")
             else:
                 width, height = determineSide("Height")
+        
+        if side == "Shortest":
+            if width < height:
+                width, height = determineSide("Width")
+            else:
+                width, height = determineSide("Height")
+                
         else:
             width, height = determineSide(side)
 
