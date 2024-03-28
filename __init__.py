@@ -1,21 +1,21 @@
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Custom.Types as TypeNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Custom.Types as TypeNodes
 
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Debug.Debug as DebugNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Debug.Debug as DebugNodes
 
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Functions.Converters as ConvNodes
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Functions.GetSizes as GetSizes
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Functions.Random as RandNodes
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Functions.Tuples as TupleNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Functions.Converters as ConvNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Functions.GetSizes as GetSizes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Functions.Random as RandNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Functions.Tuples as TupleNodes
 
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Math.SimpleMath as SMath
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Math.Trigonometry as TMath
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Math.SimpleMath as SMath
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Math.Trigonometry as TMath
 
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Modded.StandardInputs.Images as St_ImageNodes
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Modded.StandardInputs.Latents as St_LatentNodes
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Modded.StandardInputs.Condotionig as St_CondNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Modded.StandardInputs.Images as St_ImageNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Modded.StandardInputs.Latents as St_LatentNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Modded.StandardInputs.Condotionig as St_CondNodes
 
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Modded.TuplesUsed.Latents as Tu_LatentNodes
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.Nodes.Modded.TuplesUsed.Conditioning as Tu_CondNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Modded.TuplesUsed.Latents as Tu_LatentNodes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Modded.TuplesUsed.Conditioning as Tu_CondNodes
 
 
 NODE_CLASS_MAPPINGS = {

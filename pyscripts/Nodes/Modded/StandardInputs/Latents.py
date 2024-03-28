@@ -1,10 +1,9 @@
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.fields as field
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields as field
 
-from custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.tree import TREE_LATENTS
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.sizes as sizes
+from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.tree import TREE_LATENTS
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.sizes as sizes
 
 import math
-import torch
 import comfy.utils
 
 # DO NOT USE, MAY BREAK ALL
@@ -131,5 +130,3 @@ class LatentScale_Side:
         return (cls,)
 
   # 3rd option with both sides manually
-
-

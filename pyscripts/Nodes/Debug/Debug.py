@@ -1,7 +1,5 @@
-import sys
-
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.fields as field
-from custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.tree import TREE_DEBUG
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields as field
+from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.tree import TREE_DEBUG
 
 class DebugNodeFloat:
     def __init__(self):

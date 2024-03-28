@@ -1,5 +1,5 @@
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.fields as field
-from custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.tree import TREE_VARIABLE
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields as field
+from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.tree import TREE_VARIABLE
 
 import sys
 
@@ -90,5 +90,3 @@ class MultilineStringNode:
 
     def get_value(self, Text):
         return (Text,)
-
-

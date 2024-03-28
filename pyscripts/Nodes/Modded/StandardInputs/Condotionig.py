@@ -1,8 +1,6 @@
-import math
-
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.fields as field
-from custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.tree import TREE_COND
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.sizes as sizes
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields as field
+from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.tree import TREE_COND
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.sizes as sizes
 
 
 class ConditioningAreaScale_Ratio:

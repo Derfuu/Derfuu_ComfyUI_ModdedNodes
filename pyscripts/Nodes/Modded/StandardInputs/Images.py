@@ -1,7 +1,7 @@
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.fields as field
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields as field
 
-from custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.sizes import get_image_size
-from custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.tree import TREE_IMAGES
+from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.sizes import get_image_size
+from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.tree import TREE_IMAGES
 
 import math
 import comfy.utils

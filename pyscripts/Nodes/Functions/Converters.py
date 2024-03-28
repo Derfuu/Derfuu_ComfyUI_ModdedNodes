@@ -1,7 +1,7 @@
 import math
 
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.fields as field
-from custom_nodes.Derfuu_ComfyUI_ModdedNodes.components.tree import TREE_CONVERTERS
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields as field
+from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.tree import TREE_CONVERTERS
 
 
 class Int2Float:
