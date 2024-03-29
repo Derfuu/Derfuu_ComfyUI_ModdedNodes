@@ -82,7 +82,7 @@ class LatentScale_Side:
             "required": {
                 "latent": ("LATENT",),
                 "side_length": field.INT,
-                "side": (["Longest", "Width", "Height"],),
+                "side": (["Longest", "Shortest", "Width", "Height"],),
                 "scale_method": (cls.upscale_methods,),
                 "crop": (cls.crop_methods,)}}
 
@@ -115,6 +115,11 @@ class LatentScale_Side:
 
         if side == "Longest":
             if width > height:
+                width, height = determineSide("Width")
+            else:
+                width, height = determineSide("Height")
+        elif side == "Shortest":
+            if width < height:
                 width, height = determineSide("Width")
             else:
                 width, height = determineSide("Height")
