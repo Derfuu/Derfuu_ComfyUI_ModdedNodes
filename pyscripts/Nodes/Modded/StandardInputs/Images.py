@@ -83,6 +83,7 @@ class ImageScale_Side:
                 width_ratio = width_B / height_B
                 height = side_length
                 width = width_ratio * height
+            print(width, height)
             return width, height
 
         if side == "Longest":
@@ -90,13 +91,11 @@ class ImageScale_Side:
                 width, height = determineSide("Width")
             else:
                 width, height = determineSide("Height")
-        
-        if side == "Shortest":
+        elif side == "Shortest":
             if width < height:
                 width, height = determineSide("Width")
             else:
                 width, height = determineSide("Height")
-                
         else:
             width, height = determineSide(side)
 
