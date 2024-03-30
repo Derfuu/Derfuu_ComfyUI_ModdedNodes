@@ -17,6 +17,7 @@ import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Modded.StandardIn
 import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Modded.TuplesUsed.Latents as Tu_LatentNodes
 import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Modded.TuplesUsed.Conditioning as Tu_CondNodes
 
+WEB_DIRECTORY = "./scripts"
 
 NODE_CLASS_MAPPINGS = {
     "Float": TypeNodes.FloatNode,                               # Return float Value
@@ -24,11 +25,14 @@ NODE_CLASS_MAPPINGS = {
     "Text": TypeNodes.StringNode,                               # IDK where to use this... yet
     "Text box": TypeNodes.MultilineStringNode,                  # This too
 
+    # "Float debug print": DebugNodes.DebugNodeFloat,
+    # "Int debug print": DebugNodes.DebugNodeInt,
+    # "Tuple debug print": DebugNodes.DebugNodeTuple,
+    # "String debug print": DebugNodes.DebugNodeString,
+
     # NOTE: if input values are not changed, they don't print in console, same to random IDK how to fix this yet
-    "Float debug print": DebugNodes.DebugNodeFloat,
-    "Int debug print": DebugNodes.DebugNodeInt,
-    "Tuple debug print": DebugNodes.DebugNodeTuple,
-    "String debug print": DebugNodes.DebugNodeString,
+    # thanks for solution from pythongosssss of use "any" input type for nodes
+    "To text (Debug)": DebugNodes.ShowDataDebug,                # Return any converted into string if possible
 
     "Random": RandNodes.RandomValue,                            # Return random value in range
 

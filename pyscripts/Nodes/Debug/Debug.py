@@ -90,3 +90,30 @@ class DebugNodeString:
     def print_values(self, Text, Prefix):
         print(f"{Prefix}: {Text}", sep="\n")
         return (None,)
+
+class ShowDataDebug:
+    CATEGORY = TREE_DEBUG
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "ANY": field.ANY,
+                },
+        }
+
+    OUTPUT_IS_LIST = (True,)
+    RETURN_TYPES = ("STRING",)
+    OUTPUT_NODE = True
+    FUNCTION = "func"
+
+    def func(self, ANY=None):
+        out = ANY
+        try:
+
+            out = str(out)
+            print(f"[DEBUG]: {ANY}")
+        except Exception as e:
+            print(f"[DEBUG EXCEPTION]: {e}")
+            out = str(e)
+        return {"ui": {"text": [out]}, "result": ([out],)}

@@ -1,5 +1,9 @@
 import sys
 
+class AnyType(str):
+    def __ne__(self, __value: object) -> bool:
+        return False
+
 FLOAT = ("FLOAT", {"default": 1,
                    "min": -sys.float_info.max,
                    "max": sys.float_info.max,
@@ -11,3 +15,4 @@ INT = ("INT", {"default": 1,
                "step": 1})
 STRING = ("STRING", {"default": ""})
 STRING_ML = ("STRING", {"multiline": True, "default": ""})
+ANY = (AnyType("*"), {"forceInput": False})
