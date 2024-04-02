@@ -1,6 +1,6 @@
 import math
 
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields as field
+from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields import Field
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.tree import TREE_CONVERTERS
 
 
@@ -12,7 +12,7 @@ class Int2Float:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "Value": field.INT,
+                "Value": Field.int(),
             }
         }
 
@@ -32,7 +32,7 @@ class CeilNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "Value": field.FLOAT,
+                "Value": Field.float(),
             }
         }
 
@@ -53,7 +53,7 @@ class FloorNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "Value": field.FLOAT,
+                "Value": Field.float(),
             }
         }
 
@@ -74,7 +74,7 @@ class ABSNode:
     def INPUT_TYPES(self):
         return {
             "required": {
-                "Value": field.FLOAT,
+                "Value": Field.float(),
                 "negative_out": ([False, True],)
             }
         }

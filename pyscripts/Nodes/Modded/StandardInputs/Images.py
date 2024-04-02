@@ -1,4 +1,4 @@
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields as field
+from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields import Field
 
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.sizes import get_image_size
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.tree import TREE_IMAGES
@@ -15,10 +15,12 @@ class ImageScale_Ratio:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "image": ("IMAGE",),
-                "upscale_by": field.FLOAT,
-                "upscale_method": (cls.upscale_methods,),
-                "crop": (cls.crop_methods,)}}
+                "image": Field.image(),
+                "upscale_by": Field.float(),
+                "upscale_method": Field.combo(cls.upscale_methods),
+                "crop": Field.combo(cls.crop_methods)
+            }
+        }
 
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "upscale"
@@ -51,11 +53,13 @@ class ImageScale_Side:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "image": ("IMAGE",),
-                "side_length": field.INT,
-                "side": (["Longest", "Shortest", "Width", "Height"],),
-                "upscale_method": (cls.upscale_methods,),
-                "crop": (cls.crop_methods,)}}
+                "image": Field.image(),
+                "side_length": Field.int(),
+                "side": Field.combo(["Longest", "Shortest", "Width", "Height"]),
+                "upscale_method": Field.combo(cls.upscale_methods),
+                "crop": Field.combo(cls.crop_methods)
+            }
+        }
 
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "upscale"

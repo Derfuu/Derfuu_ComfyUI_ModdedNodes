@@ -1,6 +1,6 @@
 import math
 
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields as field
+from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields import Field
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.tree import TREE_MATH
 
 
@@ -12,8 +12,8 @@ class MultiplyNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "Value_A": field.FLOAT,
-                "Value_B": field.FLOAT,
+                "Value_A": Field.float(),
+                "Value_B": Field.float(),
             },
         }
 
@@ -34,8 +34,8 @@ class DivideNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "Numerator": field.FLOAT,
-                "Denominator": field.FLOAT,
+                "Numerator": Field.float(),
+                "Denominator": Field.float(),
             },
         }
 
@@ -56,8 +56,8 @@ class SumNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "Value_A": field.FLOAT,
-                "Value_B": field.FLOAT,
+                "Value_A": Field.float(),
+                "Value_B": Field.float(),
             },
         }
 
@@ -78,8 +78,8 @@ class SubtractNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "Value_A": field.FLOAT,
-                "Value_B": field.FLOAT,
+                "Value_A": Field.float(),
+                "Value_B": Field.float(),
             },
         }
 
@@ -100,8 +100,8 @@ class PowNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "Value": field.FLOAT,
-                "Exponent": field.FLOAT,
+                "Value": Field.float(),
+                "Exponent": Field.float(),
             },
         }
 
@@ -122,7 +122,7 @@ class SquareRootNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "Value": field.FLOAT,
+                "Value": Field.float(),
             },
         }
 

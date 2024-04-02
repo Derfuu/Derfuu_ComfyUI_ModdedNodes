@@ -1,4 +1,4 @@
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields as field
+from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields import Field
 
 import math
 
@@ -13,8 +13,8 @@ class Tuple:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "Value_A": field.FLOAT,
-                "Value_B": field.FLOAT,
+                "Value_A": Field.float(),
+                "Value_B": Field.float(),
                 "round_": (["No", "Yes", "Ceil", "Floor"],),
             }
         }
@@ -53,8 +53,8 @@ class Int2Tuple:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "Value_A": field.INT,
-                "Value_B": field.INT,
+                "Value_A": Field.int(),
+                "Value_B": Field.int(),
             }
         }
 
@@ -136,9 +136,9 @@ class MultiplyTupleBy:
     @classmethod
     def INPUT_TYPES(cls):
         return {
-            "required":{
+            "required": {
                 "Tuple": ("TUPLE",),
-                "Value": field.FLOAT,
+                "Value": Field.float(),
             }
         }
 

@@ -1,3 +1,4 @@
+from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields import Field
 import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.sizes as sizes
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.tree import TREE_FUNCTIONS
 
@@ -10,19 +11,20 @@ class GetLatentSize:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "latent": ("LATENT",),
-                "original": ([False, True],),
+                "latent": Field.latent(),
+                "original": Field.field([False, True]),
             }
         }
 
-    RETURN_TYPES = ("INT", "INT", "TUPLE",)
+    RETURN_TYPES = ("INT", "INT",)
+    RETURN_NAMES = ("WIDTH", "HEIGHT")
     CATEGORY = TREE_FUNCTIONS
 
     FUNCTION = 'get_size'
 
     def get_size(self, latent, original):
         size = sizes.get_latent_size(latent, original)
-        return (size[0], size[1], size,)
+        return (size[0], size[1],)
 
 
 class GetImageSize:
@@ -33,15 +35,16 @@ class GetImageSize:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "image": ("IMAGE",),
+                "image": Field.image(),
             }
         }
 
-    RETURN_TYPES = ("INT", "INT", "TUPLE",)
+    RETURN_TYPES = ("INT", "INT",)
+    RETURN_NAMES = ("WIDTH", "HEIGHT")
     CATEGORY = TREE_FUNCTIONS
 
     FUNCTION = 'get_size'
 
     def get_size(self, image):
         size = sizes.get_image_size(image)
-        return (size[0], size[1], size, )
+        return (size[0], size[1], )

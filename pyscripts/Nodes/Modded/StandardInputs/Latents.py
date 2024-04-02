@@ -1,4 +1,4 @@
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields as field
+from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields import Field
 
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.tree import TREE_LATENTS
 import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.sizes as sizes
@@ -6,35 +6,10 @@ import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.sizes as siz
 import math
 import comfy.utils
 
-# DO NOT USE, MAY BREAK ALL
-# class EmptyLatentImage:
-#     def __init__(self, device="cpu"):
-#         self.device = device
-#
-#     @classmethod
-#     def INPUT_TYPES(cls):
-#         return {
-#             "required": {
-#                 "size_tuple": ("TUPLE",),
-#                 "batch_size": field.INT,
-#             }
-#         }
-#
-#     RETURN_TYPES = ("LATENT",)
-#     FUNCTION = "generate"
-#     CATEGORY = TREE_LATENTS
-#
-#     def generate(self, size_tuple, batch_size=1):
-#         width = int(size_tuple[0])
-#         height = int(size_tuple[1])
-#
-#         latent = torch.zeros([batch_size, 4, height // 8, width // 8])
-#         return ({"samples": latent},)
-
 
 class LatentScale_Ratio:
-    scale_methods = (["nearest-exact", "bilinear", "area"],)
-    crop_methods = (["disabled", "center"],)
+    scale_methods = ["nearest-exact", "bilinear", "area"]
+    crop_methods = ["disabled", "center"]
 
     def __init__(self):
         pass
@@ -43,10 +18,10 @@ class LatentScale_Ratio:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "latent": ("LATENT",),
-                "modifier": field.FLOAT,
-                "scale_method": cls.scale_methods,
-                "crop": cls.crop_methods,
+                "latent": Field.latent(),
+                "modifier": Field.float(),
+                "scale_method": Field.combo(cls.scale_methods),
+                "crop": Field.combo(cls.crop_methods),
             }
         }
 
@@ -80,11 +55,13 @@ class LatentScale_Side:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "latent": ("LATENT",),
-                "side_length": field.INT,
-                "side": (["Longest", "Shortest", "Width", "Height"],),
-                "scale_method": (cls.upscale_methods,),
-                "crop": (cls.crop_methods,)}}
+                "latent": Field.latent(),
+                "side_length": Field.int(),
+                "side": Field.combo(["Longest", "Shortest", "Width", "Height"]),
+                "scale_method": Field.combo(cls.upscale_methods),
+                "crop": Field.combo(cls.crop_methods)
+            }
+        }
 
     RETURN_TYPES = ("LATENT",)
     FUNCTION = "upscale"

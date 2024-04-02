@@ -10,12 +10,14 @@ import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Functions.Tuples 
 import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Math.SimpleMath as SMath
 import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Math.Trigonometry as TMath
 
+import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Custom.LogicNode as LNode
+
 import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Modded.StandardInputs.Images as St_ImageNodes
 import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Modded.StandardInputs.Latents as St_LatentNodes
 import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Modded.StandardInputs.Condotionig as St_CondNodes
 
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Modded.TuplesUsed.Latents as Tu_LatentNodes
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Modded.TuplesUsed.Conditioning as Tu_CondNodes
+# import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Modded.TuplesUsed.Latents as Tu_LatentNodes
+# import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Modded.TuplesUsed.Conditioning as Tu_CondNodes
 
 WEB_DIRECTORY = "./scripts"
 
@@ -31,17 +33,17 @@ NODE_CLASS_MAPPINGS = {
     # "String debug print": DebugNodes.DebugNodeString,
 
     # NOTE: if input values are not changed, they don't print in console, same to random IDK how to fix this yet
-    # thanks for solution from pythongosssss of use "any" input type for nodes
+    # thanks for solution from pythongosssss and Suzie1 to usage of "any" input type for nodes
     "To text (Debug)": DebugNodes.ShowDataDebug,                # Return any converted into string if possible
 
     "Random": RandNodes.RandomValue,                            # Return random value in range
 
-    "Tuple": TupleNodes.Tuple,                                  # Takes floats into Tuple
-    "Int to tuple": TupleNodes.Int2Tuple,                       # Takes ints into Tuple
-    "Tuple to floats": TupleNodes.Tuple2Float,                  # Return 2 floats from Tuple
-    "Tuple to ints": TupleNodes.Tuple2Int,                      # Return 2 ints from Tuple
-    "Tuple swap": TupleNodes.FlipTuple,                         # Swap Values in tuple
-    "Tuple multiply": TupleNodes.MultiplyTupleBy,
+    # "Tuple": TupleNodes.Tuple,                                  # Takes floats into Tuple
+    # "Int to tuple": TupleNodes.Int2Tuple,                       # Takes ints into Tuple
+    # "Tuple to floats": TupleNodes.Tuple2Float,                  # Return 2 floats from Tuple
+    # "Tuple to ints": TupleNodes.Tuple2Int,                      # Return 2 ints from Tuple
+    # "Tuple swap": TupleNodes.FlipTuple,                         # Swap Values in tuple
+    # "Tuple multiply": TupleNodes.MultiplyTupleBy,
 
     "Int to float": ConvNodes.Int2Float,                        # Interpretation of int value as float
     "Ceil": ConvNodes.CeilNode,                                 # Rounds Value to next int
@@ -62,6 +64,8 @@ NODE_CLASS_MAPPINGS = {
     "Cosines": TMath.CosNode,                                   # Returns cosines of Value
     "Tangent": TMath.tgNode,                                    # Returns tangents of Value
 
+    # LOGIC (???)
+    "Logic node": LNode.LogicNode,
 
     # STANDARD MODDED
     "Latent Scale by ratio": St_LatentNodes.LatentScale_Ratio,     # Scales latent proportionally on value
@@ -72,6 +76,6 @@ NODE_CLASS_MAPPINGS = {
 
 
     # TUPLE MODDED
-    "ConditioningSetArea with tuples": Tu_CondNodes.ConditioningSetArea,     # Compose condition on field using tuples
-    "LatentComposite with tuples": Tu_LatentNodes.LatentComposite,
+    # "ConditioningSetArea with tuples": Tu_CondNodes.ConditioningSetArea,     # Compose condition on field using tuples
+    # "LatentComposite with tuples": Tu_LatentNodes.LatentComposite,
 }

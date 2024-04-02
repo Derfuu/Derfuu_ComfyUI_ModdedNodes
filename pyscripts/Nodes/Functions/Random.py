@@ -1,7 +1,8 @@
-import numpy.random
+import sys
 
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields as field
+from numpy import random
 
+from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields import Field
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.tree import TREE_FUNCTIONS
 
 
@@ -13,8 +14,9 @@ class RandomValue:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "Value_A": field.FLOAT,
-                "Value_B": field.FLOAT,
+                "Value_A": Field.float(default=0),
+                "Value_B": Field.float(default=1),
+                "seed": Field.int(default=0, min=0, max=2**32-1),
             }
         }
 
@@ -23,6 +25,7 @@ class RandomValue:
 
     CATEGORY = TREE_FUNCTIONS
 
-    def get_rand(self, Value_A, Value_B):
-        value = numpy.random.uniform(Value_A, Value_B)
+    def get_rand(self, Value_A, Value_B, seed):
+        random.seed(seed)
+        value = random.uniform(Value_A, Value_B)
         return (value,)

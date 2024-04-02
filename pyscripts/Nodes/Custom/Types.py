@@ -1,4 +1,4 @@
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields as field
+from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields import Field
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.tree import TREE_VARIABLE
 
 import sys
@@ -11,7 +11,7 @@ class FloatNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "Value": field.FLOAT,
+                "Value": Field.float(),
             },
         }
 
@@ -31,13 +31,7 @@ class IntegerNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "Value": ("FLOAT", {
-                        "default": 1,
-                        "min": -sys.maxsize,
-                        "max": sys.maxsize,
-                        "step": 1
-                    },
-                )
+                "Value": Field.float(step=1)
             },
         }
 
@@ -57,7 +51,7 @@ class StringNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "Text": field.STRING,
+                "Text": Field.string(),
             }
         }
 
@@ -77,10 +71,7 @@ class MultilineStringNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "Text": ("STRING", {
-                    "default": "",
-                    "multiline": True,
-                }),
+                "Text": Field.string(multiline=True),
             }
         }
 

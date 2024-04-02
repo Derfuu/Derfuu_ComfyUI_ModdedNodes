@@ -1,4 +1,4 @@
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields as field
+from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields import Field
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.tree import TREE_COND
 import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.sizes as sizes
 
@@ -12,9 +12,9 @@ class ConditioningAreaScale_Ratio:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "conditioning": ('CONDITIONING',),
-                "modifier": field.FLOAT,
-                "strength_modifier": field.FLOAT,
+                "conditioning": Field.conditioning(),
+                "modifier": Field.float(),
+                "strength_modifier": Field.float(),
             }
         }
 

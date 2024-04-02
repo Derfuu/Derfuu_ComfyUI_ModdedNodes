@@ -1,4 +1,4 @@
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields as field
+from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields import Field
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.tree import TREE_TRIGONOMETRY
 
 import math
@@ -11,9 +11,9 @@ class SinNode:
     def INPUT_TYPES(self):
         return {
             "required": {
-                "value": field.FLOAT,
-                "type_": (["RAD", "DEG"],),
-                "arcSin": ([False, True],)
+                "value": Field.float(),
+                "type_": Field.combo(["RAD", "DEG"]),
+                "arcSin": Field.combo([False, True])
             }
         }
 
@@ -39,9 +39,9 @@ class CosNode:
     def INPUT_TYPES(self):
         return {
             "required": {
-                "value": field.FLOAT,
-                "type_": (["RAD", "DEG"],),
-                "arcCos": ([False, True],)
+                "value": Field.float(),
+                "type_": Field.combo(["RAD", "DEG"],),
+                "arcCos": Field.combo([False, True],)
             }
         }
 
@@ -67,9 +67,9 @@ class tgNode:
     def INPUT_TYPES(self):
         return {
             "required": {
-                "value": field.FLOAT,
-                "type_": (["RAD", "DEG"],),
-                "arcTan": ([False, True],)
+                "value": Field.float(),
+                "type_": Field.combo(["RAD", "DEG"],),
+                "arcTan": Field.combo([False, True],)
             }
         }
 
