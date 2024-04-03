@@ -76,7 +76,7 @@ class Field:
     @staticmethod
     def conditioning(force: bool = False):
         field_data = {"forceInput": force}
-        return Field.field("COND", field_data)
+        return Field.field("CONDITIONING", field_data)
 
     @staticmethod
     def combo(data: list, force: bool = False):
