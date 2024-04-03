@@ -1,14 +1,14 @@
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields import Field
 
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.tree import TREE_LATENTS
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.sizes as sizes
+from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.sizes import scale_methods, get_latent_size
 
+from comfy.utils import common_upscale
 import math
-import comfy.utils
 
 
 class LatentScale_Ratio:
-    scale_methods = ["nearest-exact", "bilinear", "area"]
+    scale_methods = scale_methods
     crop_methods = ["disabled", "center"]
 
     def __init__(self):
@@ -19,7 +19,7 @@ class LatentScale_Ratio:
         return {
             "required": {
                 "latent": Field.latent(),
-                "modifier": Field.float(),
+                "modifier": Field.float(min=0),
                 "scale_method": Field.combo(cls.scale_methods),
                 "crop": Field.combo(cls.crop_methods),
             }
@@ -31,21 +31,21 @@ class LatentScale_Ratio:
 
     def scale(self, latent, scale_method, crop, modifier):
 
-        size = sizes.get_latent_size(latent, True)
+        size = get_latent_size(latent, True)
 
-        lat_width = size[0]
-        lat_height = size[1]
-        #
-        # width = latent["samples"][2]
-        # height = latent["samples"][3]
+        lat_width = size[0] * modifier
+        lat_width = int(lat_width + lat_width % 8)
+
+        lat_height = size[1] * modifier
+        lat_height = int(lat_height + lat_height % 8)
 
         cls = latent.copy()
-        cls["samples"] = comfy.utils.common_upscale(latent["samples"], lat_width // 8, lat_height // 8, scale_method, crop)
+        cls["samples"] = common_upscale(latent["samples"], lat_width, lat_height, scale_method, crop)
         return (cls,)
 
 
 class LatentScale_Side:
-    upscale_methods = ["nearest-exact", "bilinear", "area"]
+    scale_methods = scale_methods
     crop_methods = ["disabled", "center"]
 
     def __init__(self) -> None:
@@ -56,9 +56,9 @@ class LatentScale_Side:
         return {
             "required": {
                 "latent": Field.latent(),
-                "side_length": Field.int(),
+                "side_length": Field.int(default=512),
                 "side": Field.combo(["Longest", "Shortest", "Width", "Height"]),
-                "scale_method": Field.combo(cls.upscale_methods),
+                "scale_method": Field.combo(cls.scale_methods),
                 "crop": Field.combo(cls.crop_methods)
             }
         }
@@ -70,7 +70,7 @@ class LatentScale_Side:
 
     def upscale(self, latent, side_length: int, side: str, scale_method, crop):
 
-        size = sizes.get_latent_size(latent, True)
+        size = get_latent_size(latent, True)
 
         lat_width = size[0]
         lat_height = size[1]
@@ -108,7 +108,7 @@ class LatentScale_Side:
         height = math.ceil(height)
 
         cls = latent.copy()
-        cls["samples"] = comfy.utils.common_upscale(latent["samples"], width // 8, height // 8, scale_method, crop)
+        cls["samples"] = common_upscale(latent["samples"], width // 8, height // 8, scale_method, crop)
         return (cls,)
 
   # 3rd option with both sides manually

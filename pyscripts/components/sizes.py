@@ -1,3 +1,6 @@
+scale_methods = ["nearest-exact", "bilinear", "bicubic", "bislerp", "area", "lanczos"]
+
+
 def get_latent_size(LATENT, ORIGINAL_VALUES=False) -> tuple[int, int]:
     lc = LATENT.copy()
     size = lc["samples"].shape[3], lc["samples"].shape[2]

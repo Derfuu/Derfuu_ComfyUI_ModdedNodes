@@ -1,14 +1,16 @@
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields import Field
 
-from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.sizes import get_image_size
+from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.sizes import get_image_size, scale_methods
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.tree import TREE_IMAGES
 
+from comfy.utils import common_upscale
 import math
-import comfy.utils
+
+
 
 
 class ImageScale_Ratio:
-    upscale_methods = ["nearest-exact", "bilinear", "area"]
+    scale_methods = scale_methods
     crop_methods = ["disabled", "center"]
 
     @classmethod
@@ -17,7 +19,7 @@ class ImageScale_Ratio:
             "required": {
                 "image": Field.image(),
                 "upscale_by": Field.float(),
-                "upscale_method": Field.combo(cls.upscale_methods),
+                "upscale_method": Field.combo(cls.scale_methods),
                 "crop": Field.combo(cls.crop_methods)
             }
         }
@@ -37,13 +39,13 @@ class ImageScale_Ratio:
 
         height = math.ceil(height_B * upscale_by)
         width = math.ceil(width_B * upscale_by)
-        cls = comfy.utils.common_upscale(samples, width, height, upscale_method, crop)
+        cls = common_upscale(samples, width, height, upscale_method, crop)
         cls = cls.movedim(1, -1)
         return (cls,)
 
 
 class ImageScale_Side:
-    upscale_methods = ["nearest-exact", "bilinear", "area"]
+    scale_methods = scale_methods
     crop_methods = ["disabled", "center"]
 
     def __init__(self) -> None:
@@ -56,7 +58,7 @@ class ImageScale_Side:
                 "image": Field.image(),
                 "side_length": Field.int(),
                 "side": Field.combo(["Longest", "Shortest", "Width", "Height"]),
-                "upscale_method": Field.combo(cls.upscale_methods),
+                "upscale_method": Field.combo(cls.scale_methods),
                 "crop": Field.combo(cls.crop_methods)
             }
         }
@@ -105,6 +107,6 @@ class ImageScale_Side:
         width = math.ceil(width)
         height = math.ceil(height)
 
-        cls = comfy.utils.common_upscale(samples, width, height, upscale_method, crop)
+        cls = common_upscale(samples, width, height, upscale_method, crop)
         cls = cls.movedim(1, -1)
         return (cls,)
