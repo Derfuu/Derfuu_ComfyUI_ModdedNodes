@@ -16,10 +16,10 @@ def get_image_size(IMAGE) -> tuple[int, int]:
     return size
 
 
-def get_conditioning_size(CONDITIONING) -> tuple[dict["width", "height"], dict["x_offset", "y_offset"]]:
+def get_conditioning_size(CONDITIONING) -> tuple[dict[int, int], dict[int, int]]:
     size = CONDITIONING["area"]
     width = size[1]
     height = size[0]
     x_offs = size[3]
     y_offs = size[2]
-    return ({"width": width, "height": height},{"x_offset": x_offs, "y_offset":y_offs})
+    return ({"width": width, "height": height}, {"x_offset": x_offs, "y_offset":y_offs})
