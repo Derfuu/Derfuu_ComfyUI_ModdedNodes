@@ -1,5 +1,6 @@
 from enum import Enum
 
+
 class ConsoleColor(Enum):
     reset = "\x1b[0m"
     # source - https://talyian.github.io/ansicolors/
@@ -19,5 +20,7 @@ class ConsoleColor(Enum):
     pink = "\x1b[38;5;13m"
     cyan = "\x1b[38;5;14m"
     light_gray = "\x1b[38;5;15m"
+
+
 def colorize(text, color: str) -> str:
     return f"{color}{text}{ConsoleColor.reset.value}"
