@@ -7,6 +7,7 @@ TREE_FUNCTIONS = TREE_MAIN + "/Functions"
 TREE_MODDED = TREE_MAIN + "/Modded nodes"
 
 TREE_CONVERTERS = TREE_FUNCTIONS + "/Converters"
+TREE_STRINGS = TREE_FUNCTIONS + "/String Operations"
 
 TREE_TRIGONOMETRY = TREE_MATH + "/Trigonometry"
 

@@ -7,8 +7,6 @@ from comfy.utils import common_upscale
 import math
 
 
-
-
 class ImageScale_Ratio:
     scale_methods = scale_methods
     crop_methods = ["disabled", "center"]

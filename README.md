@@ -8,8 +8,9 @@
 - Math nodes
 - Modded scalers
 - Single debug output node for any types 
+- String manipulations (Replace, Concat)
 
-# Nodes descriptions
+# Nodes description
 - Debug output node
 - Variables:
   - Float - mainly used to calculation
@@ -27,6 +28,11 @@
     - Ceil - rounding up float value ex: 1.01 --> 2
     - Floor - rounding down float value ex: 1.99 --> 1
     - Absolute - return only positive (or negative) value on your choice (default - positive)
+  - String operations:
+    - Concat - concatenates 2 strings (texts) divided with delimiter if you need one
+    - Replace - replace substring with other
+      - Strict mode - replace all occurrences of the pattern in the text with another string
+      - RegEx mode - replace all occurrences of a pattern matching RegEx in the text with another string
 - Math
   - sum - (A + B)
   - subtract - (A - B)
