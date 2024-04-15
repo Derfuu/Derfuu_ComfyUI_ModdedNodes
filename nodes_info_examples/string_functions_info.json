@@ -1,0 +1,1162 @@
+  {
+  "last_node_id": 44,
+  "last_link_id": 35,
+  "nodes": [
+    {
+      "id": 12,
+      "type": "String Replace",
+      "pos": [
+        468.07681909509967,
+        87.54340541403973
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "Text",
+          "type": "STRING",
+          "link": 19,
+          "widget": {
+            "name": "Text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "TEXT",
+          "type": "STRING",
+          "links": [
+            8
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "String Replace"
+      },
+      "widgets_values": [
+        "ASD",
+        "\\d\\.",
+        "0.",
+        "RegEx"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 14,
+      "type": "String Replace",
+      "pos": [
+        698.0768190950994,
+        87.54340541403973
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "Text",
+          "type": "STRING",
+          "link": 20,
+          "widget": {
+            "name": "Text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "TEXT",
+          "type": "STRING",
+          "links": [
+            10
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "String Replace"
+      },
+      "widgets_values": [
+        "ASD",
+        "\\.\\d",
+        ".5",
+        "RegEx"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 6,
+      "type": "String Replace",
+      "pos": [
+        238.0768190950997,
+        87.54340541403973
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "Text",
+          "type": "STRING",
+          "link": 3,
+          "widget": {
+            "name": "Text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "TEXT",
+          "type": "STRING",
+          "links": [
+            4
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "String Replace"
+      },
+      "widgets_values": [
+        "ASD",
+        "\\w*ing",
+        "ing-word",
+        "RegEx"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 22,
+      "type": "String Replace",
+      "pos": [
+        698.0768190950994,
+        397.54340541403997
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "Text",
+          "type": "STRING",
+          "link": 23,
+          "widget": {
+            "name": "Text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "TEXT",
+          "type": "STRING",
+          "links": [
+            22
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "String Replace"
+      },
+      "widgets_values": [
+        "ASD",
+        "background",
+        "foreground",
+        "Strict"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 20,
+      "type": "String Replace",
+      "pos": [
+        468.07681909509967,
+        397.54340541403997
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "Text",
+          "type": "STRING",
+          "link": 24,
+          "widget": {
+            "name": "Text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "TEXT",
+          "type": "STRING",
+          "links": [
+            21
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "String Replace"
+      },
+      "widgets_values": [
+        "ASD",
+        "forest",
+        "city",
+        "Strict"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 21,
+      "type": "To text (Debug)",
+      "pos": [
+        468.07681909509967,
+        547.5434054140403
+      ],
+      "size": {
+        "0": 210,
+        "1": 120
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "ANY",
+          "type": "*",
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SAME AS INPUT",
+          "type": "*",
+          "links": [
+            23
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "To text (Debug)"
+      },
+      "widgets_values": [
+        "2girls, (standing:1.1), looking at viewer,\ncity background"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "To text (Debug)",
+      "pos": [
+        698.0768190950994,
+        237.5434054140395
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "ANY",
+          "type": "*",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SAME AS INPUT",
+          "type": "*",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "To text (Debug)"
+      },
+      "widgets_values": [
+        "1girl, (ing-word:0.5), ing-word at viewer,\nforest background"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "To text (Debug)",
+      "pos": [
+        468.07681909509967,
+        237.5434054140395
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "ANY",
+          "type": "*",
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SAME AS INPUT",
+          "type": "*",
+          "links": [
+            20
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "To text (Debug)"
+      },
+      "widgets_values": [
+        "1girl, (ing-word:0.1), ing-word at viewer,\nforest background"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "To text (Debug)",
+      "pos": [
+        238.0768190950997,
+        237.5434054140395
+      ],
+      "size": {
+        "0": 210,
+        "1": 120
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "ANY",
+          "type": "*",
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SAME AS INPUT",
+          "type": "*",
+          "links": [
+            19
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "To text (Debug)"
+      },
+      "widgets_values": [
+        "1girl, (ing-word:1.1), ing-word at viewer,\nforest background"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "String Replace",
+      "pos": [
+        238.0768190950997,
+        397.54340541403997
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "Text",
+          "type": "STRING",
+          "link": 17,
+          "widget": {
+            "name": "Text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "TEXT",
+          "type": "STRING",
+          "links": [
+            18
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "String Replace"
+      },
+      "widgets_values": [
+        "ASD",
+        "1girl",
+        "2girls",
+        "Strict"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 19,
+      "type": "To text (Debug)",
+      "pos": [
+        238.0768190950997,
+        547.5434054140403
+      ],
+      "size": {
+        "0": 210,
+        "1": 120
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "ANY",
+          "type": "*",
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SAME AS INPUT",
+          "type": "*",
+          "links": [
+            24
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "To text (Debug)"
+      },
+      "widgets_values": [
+        "2girls, (standing:1.1), looking at viewer,\nforest background"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "Text box",
+      "pos": [
+        8.076819095100182,
+        707.5434054140405
+      ],
+      "size": {
+        "0": 210,
+        "1": 80
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            27
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Text box"
+      },
+      "widgets_values": [
+        "SOME_TEXT 1"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 29,
+      "type": "To text (Debug)",
+      "pos": [
+        238.0768190950997,
+        857.5434054140403
+      ],
+      "size": {
+        "0": 210,
+        "1": 120
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "ANY",
+          "type": "*",
+          "link": 29
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SAME AS INPUT",
+          "type": "*",
+          "links": [
+            31
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "To text (Debug)"
+      },
+      "widgets_values": [
+        "1girl, (standing:1.1), looking at viewer,\nforest background, SOME_TEXT 1"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "Text box",
+      "pos": [
+        8.076819095100182,
+        87.54340541403973
+      ],
+      "size": {
+        "0": 210,
+        "1": 130
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            3,
+            17,
+            28
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Text box"
+      },
+      "widgets_values": [
+        "1girl, (standing:1.1), looking at viewer,\nforest background"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 33,
+      "type": "To text (Debug)",
+      "pos": [
+        468.07681909509967,
+        857.5434054140403
+      ],
+      "size": {
+        "0": 210,
+        "1": 120
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "ANY",
+          "type": "*",
+          "link": 30
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SAME AS INPUT",
+          "type": "*",
+          "links": [
+            32
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "To text (Debug)"
+      },
+      "widgets_values": [
+        "1girl, (standing:1.1), looking at viewer,\nforest background, SOME_TEXT 1, SOME_TEXT 2"
+      ]
+    },
+    {
+      "id": 23,
+      "type": "To text (Debug)",
+      "pos": [
+        698.0768190950994,
+        547.5434054140403
+      ],
+      "size": {
+        "0": 210,
+        "1": 120
+      },
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "ANY",
+          "type": "*",
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SAME AS INPUT",
+          "type": "*",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "To text (Debug)"
+      },
+      "widgets_values": [
+        "2girls, (standing:1.1), looking at viewer,\ncity background"
+      ]
+    },
+    {
+      "id": 36,
+      "type": "To text (Debug)",
+      "pos": [
+        698.0768190950994,
+        857.5434054140403
+      ],
+      "size": [
+        210,
+        120
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "ANY",
+          "type": "*",
+          "link": 33
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SAME AS INPUT",
+          "type": "*",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "To text (Debug)"
+      },
+      "widgets_values": [
+        "1girl, (standing:1.1), looking at viewer,\nforest background, SOME_TEXT 1, SOME_TEXT 2SOME_TEXT 2"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "String Concatenate",
+      "pos": [
+        238.0768190950997,
+        707.5434054140405
+      ],
+      "size": {
+        "0": 210,
+        "1": 80
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "Prepend",
+          "type": "STRING",
+          "link": 28,
+          "widget": {
+            "name": "Prepend"
+          }
+        },
+        {
+          "name": "Append",
+          "type": "STRING",
+          "link": 27,
+          "widget": {
+            "name": "Append"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "TEXT",
+          "type": "STRING",
+          "links": [
+            29
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "String Concatenate"
+      },
+      "widgets_values": [
+        "",
+        "",
+        ", "
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 35,
+      "type": "String Concatenate",
+      "pos": [
+        698.0768190950994,
+        707.5434054140405
+      ],
+      "size": {
+        "0": 210,
+        "1": 80
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "Prepend",
+          "type": "STRING",
+          "link": 32,
+          "widget": {
+            "name": "Prepend"
+          }
+        },
+        {
+          "name": "Append",
+          "type": "STRING",
+          "link": 35,
+          "widget": {
+            "name": "Append"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "TEXT",
+          "type": "STRING",
+          "links": [
+            33
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "String Concatenate"
+      },
+      "widgets_values": [
+        "",
+        "",
+        ""
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 34,
+      "type": "String Concatenate",
+      "pos": [
+        468.07681909509967,
+        707.5434054140405
+      ],
+      "size": {
+        "0": 210,
+        "1": 80
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "Prepend",
+          "type": "STRING",
+          "link": 31,
+          "widget": {
+            "name": "Prepend"
+          }
+        },
+        {
+          "name": "Append",
+          "type": "STRING",
+          "link": 26,
+          "widget": {
+            "name": "Append"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "TEXT",
+          "type": "STRING",
+          "links": [
+            30
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "String Concatenate"
+      },
+      "widgets_values": [
+        "",
+        "",
+        ", "
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 31,
+      "type": "Text box",
+      "pos": [
+        8.076819095100182,
+        857.5434054140403
+      ],
+      "size": {
+        "0": 210,
+        "1": 120
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            26,
+            35
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Text box"
+      },
+      "widgets_values": [
+        "SOME_TEXT 2"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 27,
+      "type": "Note",
+      "pos": [
+        8.076819095100182,
+        257.54340541403957
+      ],
+      "size": [
+        210,
+        390
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "'\\n', '\\t' and other string or RegEx special symbols might need to use another '\\' before them to correctly interact with functions.\n\nStrict replace mode - replaces all occurrences in text. \nRegEx replace mode - replaces all matching substrings with other one.\n\n*Spaces are symbols too. Don't forget them.\n\n**Nodes widgets can be switched to inputs and vice versa.\n\nRegEx help: https://regexr.com/"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      3,
+      7,
+      0,
+      6,
+      0,
+      "STRING"
+    ],
+    [
+      4,
+      6,
+      0,
+      8,
+      0,
+      "*"
+    ],
+    [
+      8,
+      12,
+      0,
+      13,
+      0,
+      "*"
+    ],
+    [
+      10,
+      14,
+      0,
+      15,
+      0,
+      "*"
+    ],
+    [
+      17,
+      7,
+      0,
+      18,
+      0,
+      "STRING"
+    ],
+    [
+      18,
+      18,
+      0,
+      19,
+      0,
+      "*"
+    ],
+    [
+      19,
+      8,
+      0,
+      12,
+      0,
+      "STRING"
+    ],
+    [
+      20,
+      13,
+      0,
+      14,
+      0,
+      "STRING"
+    ],
+    [
+      21,
+      20,
+      0,
+      21,
+      0,
+      "*"
+    ],
+    [
+      22,
+      22,
+      0,
+      23,
+      0,
+      "*"
+    ],
+    [
+      23,
+      21,
+      0,
+      22,
+      0,
+      "STRING"
+    ],
+    [
+      24,
+      19,
+      0,
+      20,
+      0,
+      "STRING"
+    ],
+    [
+      26,
+      31,
+      0,
+      34,
+      1,
+      "STRING"
+    ],
+    [
+      27,
+      30,
+      0,
+      28,
+      1,
+      "STRING"
+    ],
+    [
+      28,
+      7,
+      0,
+      28,
+      0,
+      "STRING"
+    ],
+    [
+      29,
+      28,
+      0,
+      29,
+      0,
+      "*"
+    ],
+    [
+      30,
+      34,
+      0,
+      33,
+      0,
+      "*"
+    ],
+    [
+      31,
+      29,
+      0,
+      34,
+      0,
+      "STRING"
+    ],
+    [
+      32,
+      33,
+      0,
+      35,
+      0,
+      "STRING"
+    ],
+    [
+      33,
+      35,
+      0,
+      36,
+      0,
+      "*"
+    ],
+    [
+      35,
+      31,
+      0,
+      35,
+      1,
+      "STRING"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "String functional",
+      "bounding": [
+        0,
+        -1,
+        918,
+        998
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    }
+  ],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
