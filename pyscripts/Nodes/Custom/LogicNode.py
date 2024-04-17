@@ -10,7 +10,12 @@ class LogicNode:
         return {
             "required": {
                 "Operation": Field.combo([
-                    ">", "<", "=", "AND", "OR", "XOR",
+                    "A > B",
+                    "A < B",
+                    "A = B",
+                    "A AND B",
+                    "A OR B",
+                    "A XOR B",
                 ]),
                 "CompareValue_A": Field.any(),
             },
@@ -25,19 +30,19 @@ class LogicNode:
     CATEGORY = TREE_FUNCTIONS
     FUNCTION = "do_logic"
 
-    def do_logic(self, CompareValue_A, CompareValue_B = False, OnTrue = False, OnFalse = False, Operation: str = "AND") -> tuple:
+    def do_logic(self, CompareValue_A, CompareValue_B = False, OnTrue = False, OnFalse = False, Operation: str = "A AND B") -> tuple:
         match Operation:
-            case ">":
+            case "A > B":
                 value = OnTrue if CompareValue_A > CompareValue_B else OnFalse
-            case "<":
+            case "A < B":
                 value = OnTrue if CompareValue_A < CompareValue_B else OnFalse
-            case "=":
+            case "A = B":
                 value = OnTrue if CompareValue_A == CompareValue_B else OnFalse
-            case "AND":
+            case "A AND B":
                 value = OnTrue if CompareValue_A and CompareValue_B else OnFalse
-            case "OR":
+            case "A OR B":
                 value = OnTrue if CompareValue_A or CompareValue_B else OnFalse
-            case "XOR":
+            case "A XOR B":
                 value = OnTrue if not (CompareValue_A and CompareValue_B) and (CompareValue_A or CompareValue_B) else OnFalse
             case _:
                 value = None
