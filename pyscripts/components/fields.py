@@ -79,6 +79,11 @@ class Field:
         return Field.field("CONDITIONING", field_data)
 
     @staticmethod
+    def clip(force: bool = False):
+        field_data = {"forceInput": force}
+        return Field.field("CLIP", field_data)
+
+    @staticmethod
     def combo(data: list, force: bool = False):
         field_data = {"forceInput": force}
         return Field.field(data, field_data)
