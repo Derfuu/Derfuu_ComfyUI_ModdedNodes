@@ -3,7 +3,7 @@ import logging
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields import Field, ANY
 from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.tree import TREE_DEBUG
 
-from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.colours import colorize, ConsoleColor
+from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.colors import colorize, ConsoleColor
 
 class ShowDataDebug:
     CATEGORY = TREE_DEBUG
