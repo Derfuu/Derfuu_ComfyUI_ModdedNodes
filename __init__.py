@@ -1,3 +1,10 @@
+"""
+@author: Derfuu
+@title: Derfuu simple/modded Nodes
+@nickname: Derfuu simple/modded Nodes
+@description: Pack of simple (or not) and modded nodes for scaling images/latents, editing numbers or text. Automate calculations depending on image sizes or any other thing you want. Or randomize any number in your workflow. Debug node included.
+"""
+
 from .pyscripts.Nodes.Custom import Types as TypeNodes
 
 from .pyscripts.Nodes.Debug import Debug as DebugNodes
