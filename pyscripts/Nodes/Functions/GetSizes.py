@@ -1,6 +1,6 @@
-from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields import Field
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.sizes as sizes
-from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.tree import TREE_FUNCTIONS
+from ...components import sizes
+from ...components.fields import Field
+from ...components.tree import TREE_FUNCTIONS
 
 
 class GetLatentSize:

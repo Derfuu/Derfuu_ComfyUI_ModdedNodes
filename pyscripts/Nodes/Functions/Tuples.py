@@ -1,8 +1,7 @@
-from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields import Field
-
 import math
 
-from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.tree import TREE_TUPLES
+from ...components.fields import Field
+from ...components.tree import TREE_TUPLES
 
 
 class Tuple:

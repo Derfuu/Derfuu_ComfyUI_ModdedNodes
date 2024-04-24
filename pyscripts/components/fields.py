@@ -1,10 +1,10 @@
 import sys
-from typing import Tuple
 
 
 class AnyType(str):
     def __ne__(self, __value: object) -> bool:
         return False
+
 
 ANY = AnyType("*")
 
@@ -14,18 +14,19 @@ class Field:
     def field(field: str | list, data: dict = None) -> tuple[str | list, dict] | tuple[str | list]:
         if data:
             return (field, data,)
-        return (field, )
+        return (field,)
 
     @staticmethod
     def bool(
-        default: float = False, force: bool = False
+            default: float = False, force: bool = False
     ) -> tuple[str, dict]:
         field_data = {"default": default, "force": force}
         return Field.field("BOOL", field_data)
 
     @staticmethod
     def float(
-            default: float = 1, min: float = -sys.float_info.max, max: float = sys.float_info.max, step: float = 0.01, force: bool = False
+            default: float = 1, min: float = -sys.float_info.max, max: float = sys.float_info.max, step: float = 0.01,
+            force: bool = False
     ) -> tuple[str, dict]:
         field_data = {"default": default, "min": min, "max": max, "step": step, "forceInput": force}
         return Field.field("FLOAT", field_data)

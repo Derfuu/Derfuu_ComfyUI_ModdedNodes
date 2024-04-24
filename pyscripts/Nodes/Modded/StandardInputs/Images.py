@@ -1,10 +1,10 @@
-from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields import Field
-
-from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.sizes import get_image_size, scale_methods
-from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.tree import TREE_IMAGES
-
-from comfy.utils import common_upscale
 import math
+from comfy.utils import common_upscale
+
+from ....components.fields import Field
+from ....components.sizes import get_image_size, scale_methods
+from ....components.tree import TREE_IMAGES
+
 
 
 class ImageScale_Ratio:

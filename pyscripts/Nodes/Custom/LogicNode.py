@@ -1,5 +1,5 @@
-from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields import Field, ANY
-from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.tree import TREE_FUNCTIONS
+from ...components.fields import Field, ANY
+from ...components.tree import TREE_FUNCTIONS
 
 class LogicNode:
     def __init__(self) -> None:

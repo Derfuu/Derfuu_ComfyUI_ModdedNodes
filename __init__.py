@@ -1,21 +1,21 @@
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Custom.Types as TypeNodes
+from .pyscripts.Nodes.Custom import Types as TypeNodes
 
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Debug.Debug as DebugNodes
+from .pyscripts.Nodes.Debug import Debug as DebugNodes
 
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Functions.Converters as ConvNodes
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Functions.GetSizes as GetSizes
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Functions.Random as RandNodes
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Functions.Tuples as TupleNodes
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Functions.Strings as StringNodes
+from .pyscripts.Nodes.Functions import Converters as ConvNodes
+from .pyscripts.Nodes.Functions import GetSizes as GetSizes
+from .pyscripts.Nodes.Functions import Random as RandNodes
+from .pyscripts.Nodes.Functions import Tuples as TupleNodes
+from .pyscripts.Nodes.Functions import Strings as StringNodes
 
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Math.SimpleMath as SMath
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Math.Trigonometry as TMath
+from .pyscripts.Nodes.Math import SimpleMath as SMath
+from .pyscripts.Nodes.Math import Trigonometry as TMath
 
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Custom.LogicNode as LNode
+from .pyscripts.Nodes.Custom import LogicNode as LNode
 
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Modded.StandardInputs.Images as St_ImageNodes
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Modded.StandardInputs.Latents as St_LatentNodes
-import custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.Nodes.Modded.StandardInputs.Condotionig as St_CondNodes
+from .pyscripts.Nodes.Modded.StandardInputs import Images as St_ImageNodes
+from .pyscripts.Nodes.Modded.StandardInputs import Latents as St_LatentNodes
+from .pyscripts.Nodes.Modded.StandardInputs import Condotionig as St_CondNodes
 
 
 WEB_DIRECTORY = "./scripts"

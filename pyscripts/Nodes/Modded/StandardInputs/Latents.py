@@ -1,10 +1,10 @@
-from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields import Field
-
-from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.tree import TREE_LATENTS
-from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.sizes import scale_methods, get_latent_size
-
-from comfy.utils import common_upscale
 import math
+from comfy.utils import common_upscale
+
+from ....components.fields import Field
+from ....components.tree import TREE_LATENTS
+from ....components.sizes import scale_methods, get_latent_size
+
 
 
 class LatentScale_Ratio:

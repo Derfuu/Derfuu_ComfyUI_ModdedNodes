@@ -1,9 +1,6 @@
-import logging
-
-from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.fields import Field, ANY
-from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.tree import TREE_DEBUG
-
-from custom_nodes.Derfuu_ComfyUI_ModdedNodes.pyscripts.components.colors import colorize, ConsoleColor
+from ...components.fields import Field, ANY
+from ...components.colors import colorize, ConsoleColor
+from ...components.tree import TREE_DEBUG
 
 class ShowDataDebug:
     CATEGORY = TREE_DEBUG
