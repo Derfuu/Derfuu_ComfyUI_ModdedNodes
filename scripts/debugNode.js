@@ -4,7 +4,7 @@ import {ComfyWidgets} from "../../../scripts/widgets.js";
 app.registerExtension({
     name: "derfuu.Debug.ShowDataText",
     async beforeRegisterNodeDef(nodeType, nodeData, app) {
-        if (nodeData.name === "To text (Debug)") {
+        if (nodeData.name === "DF_To_text_(Debug)") {
             function set_text_wid(text) {
                 if (this.widgets) {
                     for (let i = 0; i < this.widgets.length; i++) {
@@ -13,7 +13,7 @@ app.registerExtension({
                     this.widgets.length = 0;
                 }
 
-                const widget = ComfyWidgets["STRING"](this, "DEBUG INFO", ["STRING", {multiline: true}], app).widget;
+                const widget = ComfyWidgets.STRING(this, "DEBUG INFO", ["STRING", {multiline: true}], app).widget;
                 widget.inputEl.readOnly = true;
                 widget.inputEl.style.opacity = 0.75;
                 widget.value = text;
