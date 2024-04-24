@@ -16,7 +16,6 @@ class ShowDataDebug:
             },
         }
 
-    OUTPUT_IS_LIST = (False, True, )
     RETURN_TYPES = (ANY, "STRING", )
     RETURN_NAMES = ("SAME AS INPUT", "STRING", )
     OUTPUT_NODE = True
@@ -30,4 +29,4 @@ class ShowDataDebug:
         except Exception as e:
             print(colorize(f"[DEBUG-EXCEPTION]: {e}", ConsoleColor.bold_red.value))
             out = str(e)
-        return {"ui": {"text": [out]}, "result": (ANY, [out])}
+        return {"ui": {"text": [out]}, "result": (ANY, out)}
