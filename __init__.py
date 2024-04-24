@@ -20,9 +20,9 @@ from .pyscripts.Nodes.Math import Trigonometry as TMath
 
 from .pyscripts.Nodes.Custom import LogicNode as LNode
 
-from .pyscripts.Nodes.Modded.StandardInputs import Images as St_ImageNodes
-from .pyscripts.Nodes.Modded.StandardInputs import Latents as St_LatentNodes
-from .pyscripts.Nodes.Modded.StandardInputs import Condotionig as St_CondNodes
+from .pyscripts.Nodes.Modded import Images as St_ImageNodes
+from .pyscripts.Nodes.Modded import Latents as St_LatentNodes
+from .pyscripts.Nodes.Modded import Conditioning as St_CondNodes
 
 
 WEB_DIRECTORY = "./scripts"

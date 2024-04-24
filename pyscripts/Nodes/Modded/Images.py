@@ -1,9 +1,9 @@
 import math
 from comfy.utils import common_upscale
 
-from ....components.fields import Field
-from ....components.sizes import get_image_size, scale_methods
-from ....components.tree import TREE_IMAGES
+from ...components.fields import Field
+from ...components.sizes import get_image_size, scale_methods
+from ...components.tree import TREE_IMAGES
 
 
 

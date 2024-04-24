@@ -1,6 +1,6 @@
-from ....components.fields import Field
-from ....components.tree import TREE_COND
-from ....components import sizes
+from ...components.fields import Field
+from ...components.tree import TREE_COND
+from ...components.sizes import get_conditioning_size
 
 
 class ConditioningAreaScale_Ratio:
@@ -29,7 +29,7 @@ class ConditioningAreaScale_Ratio:
             n = [t[0], t[1].copy()]
 
             try:
-                size, offset = sizes.get_conditioning_size(n[1])
+                size, offset = get_conditioning_size(n[1])
             except:
                 c.append(n)
                 continue

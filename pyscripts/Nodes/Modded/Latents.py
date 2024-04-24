@@ -1,9 +1,9 @@
 import math
 from comfy.utils import common_upscale
 
-from ....components.fields import Field
-from ....components.tree import TREE_LATENTS
-from ....components.sizes import scale_methods, get_latent_size
+from ...components.fields import Field
+from ...components.tree import TREE_LATENTS
+from ...components.sizes import scale_methods, get_latent_size
 
 
 
