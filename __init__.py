@@ -20,47 +20,39 @@ from .pyscripts.Nodes.Modded.StandardInputs import Condotionig as St_CondNodes
 
 WEB_DIRECTORY = "./scripts"
 
+_ident = "DF_"
+_n = lambda name: f"{_ident}{name}"
+
 NODE_CLASS_MAPPINGS = {
-    "Float": TypeNodes.FloatNode,                   # Return float Value
-    "Integer": TypeNodes.IntegerNode,               # Return int Value
-    "Text": TypeNodes.StringNode,                   # IDK where to use this... yet
-    "Text box": TypeNodes.MultilineStringNode,      # This too
-
-    "String Concatenate": StringNodes.StringConcat,  # Concat 2 strings into single one with delimiter between them
-    "String Replace": StringNodes.StringReplace,     # Replaces substring in main string with new one.
-
-    # NOTE: if input values are not changed, they don't print in console
-    # thanks for solution from pythongosssss and Suzie1 to usage of "any" input type for nodes
-    "To text (Debug)": DebugNodes.ShowDataDebug,    # Return any converted into string if possible
-
-    "Random": RandNodes.RandomValue,                # Return random value in range
-
-    "Int to float": ConvNodes.Int2Float,            # Interpretation of int value as float
-    "Ceil": ConvNodes.CeilNode,                     # Rounds Value to next int
-    "Floor": ConvNodes.FloorNode,                   # Rounds Value to previous int
-    "Absolute value": ConvNodes.ABSNode,            # Return absolute Value of input
-
-    "Get latent size": GetSizes.GetLatentSize,      # Return size of latent
-    "Get image size": GetSizes.GetImageSize,        # Return size of image
-
-    "Sum": SMath.SumNode,                           # Summaries 2 values
-    "Subtract": SMath.SubtractNode,                 # Subtracts Value_B from Value_A
-    "Multiply": SMath.MultiplyNode,                 # Multiplies 2 values
-    "Divide": SMath.DivideNode,                     # Divides Value_A on Value_B
-    "Power": SMath.PowNode,                         # Returns Value_A powered by Value_B
-    "Square root": SMath.SquareRootNode,            # Returns square root of Value
-
-    "Sinus": TMath.SinNode,                         # Returns sinus of Value
-    "Cosines": TMath.CosNode,                       # Returns cosines of Value
-    "Tangent": TMath.tgNode,                        # Returns tangents of Value
-
-    # LOGIC (???)
-    "Logic node": LNode.LogicNode,
-
-    # STANDARD MODDED
-    "Latent Scale by ratio": St_LatentNodes.LatentScale_Ratio,     # Scales latent proportionally on value
-    "Latent Scale to side": St_LatentNodes.LatentScale_Side,       # Proportionally scales latent to fit in side size
-    "Image scale by ratio": St_ImageNodes.ImageScale_Ratio,        # Scales image proportionally on value
-    "Image scale to side": St_ImageNodes.ImageScale_Side,          # Proportionally scales image to fit in side size
-    "Conditioning area scale by ratio": St_CondNodes.ConditioningAreaScale_Ratio,
+    _n("Float"): TypeNodes.FloatNode,
+    _n("Integer"): TypeNodes.IntegerNode,
+    _n("Text"): TypeNodes.StringNode,
+    _n("Text_Box"): TypeNodes.MultilineStringNode,
+    _n("String_Concatenate"): StringNodes.StringConcat,
+    _n("String_Replace"): StringNodes.StringReplace,
+    _n("To_text_(Debug)"): DebugNodes.ShowDataDebug,
+    _n("Random"): RandNodes.RandomValue,
+    _n("Int_to_Float"): ConvNodes.Int2Float,
+    _n("Ceil"): ConvNodes.CeilNode,
+    _n("Floor"): ConvNodes.FloorNode,
+    _n("Absolute_value"): ConvNodes.ABSNode,
+    _n("Get_latent_size"): GetSizes.GetLatentSize,
+    _n("Get_image_size"): GetSizes.GetImageSize,
+    _n("Sum"): SMath.SumNode,
+    _n("Subtract"): SMath.SubtractNode,
+    _n("Multiply"): SMath.MultiplyNode,
+    _n("Divide"): SMath.DivideNode,
+    _n("Power"): SMath.PowNode,
+    _n("Square_root"): SMath.SquareRootNode,
+    _n("Sinus"): TMath.SinNode,
+    _n("Cosines"): TMath.CosNode,
+    _n("Tangent"): TMath.tgNode,
+    _n("Logic_node"): LNode.LogicNode,
+    _n("Latent_Scale_by_ratio"): St_LatentNodes.LatentScale_Ratio,
+    _n("Latent_Scale_to_side"): St_LatentNodes.LatentScale_Side,
+    _n("Image_scale_by_ratio"): St_ImageNodes.ImageScale_Ratio,
+    _n("Image_scale_to_side"): St_ImageNodes.ImageScale_Side,
+    _n("Conditioning_area_scale_by_ratio"): St_CondNodes.ConditioningAreaScale_Ratio,
 }
+
+NODE_DISPLAY_NAME_MAPPINGS = {k: k.replace(_ident, "").replace("_", " ") for k in NODE_CLASS_MAPPINGS}
