@@ -35,6 +35,7 @@ NODE_CLASS_MAPPINGS = {
     _n("Integer"): TypeNodes.IntegerNode,
     _n("Text"): TypeNodes.StringNode,
     _n("Text_Box"): TypeNodes.MultilineStringNode,
+    _n("DynamicPrompts_Text_Box"): TypeNodes.AsDynamicPromptsStringNode,
     _n("String_Concatenate"): StringNodes.StringConcat,
     _n("String_Replace"): StringNodes.StringReplace,
     _n("To_text_(Debug)"): DebugNodes.ShowDataDebug,

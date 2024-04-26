@@ -38,7 +38,7 @@ class IntegerNode:
     CATEGORY = TREE_VARIABLE
     FUNCTION = "get_value"
 
-    def get_value(self, Value):
+    def get_value(self, Value: float):
         return (int(Value),)
 
 
@@ -58,7 +58,7 @@ class StringNode:
     FUNCTION = "get_value"
     CATEGORY = TREE_VARIABLE
 
-    def get_value(self, Text):
+    def get_value(self, Text: str) -> tuple[str]:
         return (Text,)
 
 
@@ -78,5 +78,25 @@ class MultilineStringNode:
     FUNCTION = "get_value"
     CATEGORY = TREE_VARIABLE
 
-    def get_value(self, Text):
+    def get_value(self, Text: str) -> tuple[str]:
+        return (Text,)
+
+class AsDynamicPromptsStringNode:
+    def __init__(self):
+        pass
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "Text": Field.string(multiline=True, dynamicPrompts=True),
+            },
+        }
+
+
+    RETURN_TYPES = ("STRING",)
+    FUNCTION = "get_value"
+    CATEGORY = TREE_VARIABLE
+
+    def get_value(self, Text: str) -> tuple[str]:
         return (Text,)

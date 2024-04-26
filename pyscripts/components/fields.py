@@ -17,11 +17,11 @@ class Field:
         return (field,)
 
     @staticmethod
-    def bool(
+    def boolean(
             default: float = False, force: bool = False
     ) -> tuple[str, dict]:
         field_data = {"default": default, "force": force}
-        return Field.field("BOOL", field_data)
+        return Field.field("BOOLEAN", field_data)
 
     @staticmethod
     def float(
@@ -40,9 +40,12 @@ class Field:
 
     @staticmethod
     def string(
-            default: str = '', multiline: bool = False, force: bool = False
+            default: str = '',
+            multiline: bool = False,
+            force: bool = False,
+            dynamicPrompts: bool = False
     ) -> tuple[str, dict]:
-        field_data = {"default": default, 'multiline': multiline, "forceInput": force}
+        field_data = {"default": default, 'multiline': multiline, "forceInput": force, "dynamicPrompts": dynamicPrompts}
         return Field.field("STRING", field_data)
 
     @staticmethod
