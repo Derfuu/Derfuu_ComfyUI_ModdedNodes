@@ -11,7 +11,7 @@
 - Single debug output node for any types with widget 
 
 # Nodes description
-- Debug output node - tries to convert any input type into string and print it in widget and console. if error - prints it in console
+- Debug output node - tries to convert any input type into string and print it in widget and console.
 - Variables:
   - Float - mainly used to calculation
   - Integer - used to set width/height and offsets mainly, also provides converting float values into integer
