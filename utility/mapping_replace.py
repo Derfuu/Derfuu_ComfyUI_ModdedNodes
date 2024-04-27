@@ -51,3 +51,5 @@ if __name__ == "__main__":
     path = f"{replaced_folder}/{datetime.now().strftime('%d-%m-%Y %H.%M.%S')}.json"
     with open(path, "w") as j_file:
         j_file.write(dumps(workflow))
+    print("Done.")
+    input("Press any key to close console.")
