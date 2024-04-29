@@ -16,6 +16,7 @@ class ShowDataDebug:
     RETURN_TYPES = (ANY, "STRING", )
     RETURN_NAMES = ("SAME AS INPUT", "STRING", )
     OUTPUT_NODE = True
+    IS_CHANGED = True
     FUNCTION = "func"
 
     def func(self, ANY = None):
