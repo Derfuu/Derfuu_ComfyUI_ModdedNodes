@@ -12,7 +12,6 @@ from .pyscripts.Nodes.Debug import Debug as DebugNodes
 from .pyscripts.Nodes.Functions import Converters as ConvNodes
 from .pyscripts.Nodes.Functions import GetSizes as GetSizes
 from .pyscripts.Nodes.Functions import Random as RandNodes
-from .pyscripts.Nodes.Functions import Tuples as TupleNodes
 from .pyscripts.Nodes.Functions import Strings as StringNodes
 
 from .pyscripts.Nodes.Math import SimpleMath as SMath
@@ -24,8 +23,6 @@ from .pyscripts.Nodes.Modded import Images as St_ImageNodes
 from .pyscripts.Nodes.Modded import Latents as St_LatentNodes
 from .pyscripts.Nodes.Modded import Conditioning as St_CondNodes
 
-
-WEB_DIRECTORY = "./scripts"
 
 _ident = "DF_"
 _n = lambda name: f"{_ident}{name}"
@@ -63,4 +60,7 @@ NODE_CLASS_MAPPINGS = {
     _n("Conditioning_area_scale_by_ratio"): St_CondNodes.ConditioningAreaScale_Ratio,
 }
 
+WEB_DIRECTORY = "./scripts"
 NODE_DISPLAY_NAME_MAPPINGS = {k: k.replace(_ident, "").replace("_", " ") for k in NODE_CLASS_MAPPINGS}
+
+__all__ = ["NODE_CLASS_MAPPINGS", "WEB_DIRECTORY"]
