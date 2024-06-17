@@ -1,0 +1,14 @@
+[project]
+name = "derfuu_comfyui_moddednodes"
+description = "Automate calculation depending on image sizes or something you want."
+version = "1.0.0"
+license = "LICENSE"
+
+[project.urls]
+Repository = "https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "Derfuu_ComfyUI_ModdedNodes"
+Icon = ""
