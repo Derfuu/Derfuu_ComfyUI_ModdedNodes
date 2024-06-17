@@ -9,6 +9,6 @@ Repository = "https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes"
 #  Used by Comfy Registry https://comfyregistry.org
 
 [tool.comfy]
-PublisherId = ""
+PublisherId = "derfuu"
 DisplayName = "Derfuu_ComfyUI_ModdedNodes"
 Icon = ""
