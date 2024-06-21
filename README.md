@@ -7,7 +7,7 @@
 - Easier(or not) editing multiple values of various nodes
 - Math nodes
 - Modded scalers (scale by side/ratio)
-- String manipulations (Replace, Concat)
+- String manipulations (Replace, Concat, Search)
 - Single debug output node for any types with widget 
 
 # Nodes description
@@ -34,6 +34,9 @@
     - Replace - replaces substring with other string
       - Strict mode - replace all occurrences of the pattern in the text with another string
       - RegEx mode - replace all occurrences of a pattern matching RegEx in the text with another string
+    - Search - search substring in text and return occurrences count 
+      - Strict mode - search for all occurrences of pattern in the text
+      - RegEx mode - search for all occurrences matching RegEx pattern in the text
 - Math
   - sum - (A + B)
   - subtract - (A - B)
