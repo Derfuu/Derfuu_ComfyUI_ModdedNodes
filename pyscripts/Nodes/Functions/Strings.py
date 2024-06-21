@@ -1,7 +1,5 @@
-import logging
 import re
 
-from ...components.colors import colorize, ConsoleColor
 from ...components.tree import TREE_STRINGS
 from ...components.fields import Field
 
@@ -77,7 +75,7 @@ class SearchInText:
         }
 
     RETURN_TYPES = ("BOOLEAN", "INT",)
-    RETURN_NAMES = ("BOOLEAN", "OCCURANCES",)
+    RETURN_NAMES = ("BOOLEAN", "OCCURRENCES",)
     FUNCTION = "search_in_text"
     CATEGORY = TREE_STRINGS
 
