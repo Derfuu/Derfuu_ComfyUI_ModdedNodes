@@ -35,6 +35,7 @@ NODE_CLASS_MAPPINGS = {
     _n("DynamicPrompts_Text_Box"): TypeNodes.AsDynamicPromptsStringNode,
     _n("String_Concatenate"): StringNodes.StringConcat,
     _n("String_Replace"): StringNodes.StringReplace,
+    _n("Search_In_Text"): StringNodes.SearchInText,
     _n("To_text_(Debug)"): DebugNodes.ShowDataDebug,
     _n("Random"): RandNodes.RandomValue,
     _n("Int_to_Float"): ConvNodes.Int2Float,

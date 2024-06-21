@@ -55,3 +55,39 @@ class StringReplace:
             case "RegEx":
                 out = re.sub(Pattern, Replace_With, Text)
         return (out,)
+
+class SearchInText:
+    def __init__(self):
+        pass
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "Text": Field.string(),
+                "Pattern": Field.string(),
+                "ConsiderRegister": Field.boolean(default=False),
+                "Mode": Field.combo(["Strict", "RegEx"]),
+            }
+        }
+
+    RETURN_TYPES = ("BOOLEAN", "INT",)
+    RETURN_NAMES = ("IS_IN_TEXT", "OCCURANCES",)
+    FUNCTION = "search_in_text"
+    CATEGORY = TREE_STRINGS
+
+    def search_in_text(self, Text: str, Pattern: str, ConsiderRegister: bool, Mode: str) -> tuple:
+        out = None
+        occs = 0
+        if not ConsiderRegister:
+            Text = Text.lower()
+            Pattern = Pattern.lower()
+        if Mode == "Strict":
+            while Pattern in Text:
+                out = True
+                occs += 1
+                Text = Text.replace(Pattern, "", 1)
+        elif Mode == "RegEx":
+            occs = len(re.findall(Pattern, Text))
+            out = bool(occs)
+        return (out, occs)
