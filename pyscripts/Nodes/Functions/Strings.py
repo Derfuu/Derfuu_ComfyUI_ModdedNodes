@@ -77,7 +77,7 @@ class SearchInText:
         }
 
     RETURN_TYPES = ("BOOLEAN", "INT",)
-    RETURN_NAMES = ("IS_IN_TEXT", "OCCURANCES",)
+    RETURN_NAMES = ("BOOLEAN", "OCCURANCES",)
     FUNCTION = "search_in_text"
     CATEGORY = TREE_STRINGS
 
