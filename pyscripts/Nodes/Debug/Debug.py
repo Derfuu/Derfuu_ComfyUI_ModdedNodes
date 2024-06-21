@@ -1,6 +1,7 @@
 from ...components.fields import Field, ANY
 from ...components.colors import colorize, ConsoleColor
 from ...components.tree import TREE_DEBUG
+import logging
 
 class ShowDataDebug:
     CATEGORY = TREE_DEBUG
@@ -23,8 +24,8 @@ class ShowDataDebug:
         out = ANY
         try:
             out = str(out)
-            print(colorize(f"[DEBUG]: {ANY}", ConsoleColor.blue.value))
+            logging.info(colorize(f"[DEBUG]: {ANY}", ConsoleColor.blue.value))
         except Exception as e:
-            print(colorize(f"[DEBUG-EXCEPTION]: {e}", ConsoleColor.bold_red.value))
+            logging.info(colorize(f"[DEBUG-EXCEPTION]: {e}", ConsoleColor.bold_red.value))
             out = str(e)
         return {"ui": {"text": [out]}, "result": (ANY, out)}

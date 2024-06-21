@@ -1,4 +1,7 @@
+import logging
 import re
+
+from ...components.colors import colorize, ConsoleColor
 from ...components.tree import TREE_STRINGS
 from ...components.fields import Field
 
@@ -47,14 +50,16 @@ class StringReplace:
     FUNCTION = "replace"
     CATEGORY = TREE_STRINGS
 
-    def replace(self, Text, Pattern, Replace_With, Mode):
+    def replace(self, Text: str, Pattern: str, Replace_With: str, Mode: str):
         out = Text
+        Pattern = Pattern.encode().decode("unicode_escape")
         match Mode:
             case "Strict":
                 out = Text.replace(Pattern, Replace_With)
             case "RegEx":
-                out = re.sub(Pattern, Replace_With, Text)
+                out = re.sub(Pattern, Replace_With, out, flags=re.MULTILINE)
         return (out,)
+
 
 class SearchInText:
     def __init__(self):
@@ -79,15 +84,17 @@ class SearchInText:
     def search_in_text(self, Text: str, Pattern: str, ConsiderRegister: bool, Mode: str) -> tuple:
         out = None
         occs = 0
+        Pattern = Pattern.encode().decode("unicode_escape")
         if not ConsiderRegister:
             Text = Text.lower()
             Pattern = Pattern.lower()
-        if Mode == "Strict":
-            while Pattern in Text:
-                out = True
-                occs += 1
-                Text = Text.replace(Pattern, "", 1)
-        elif Mode == "RegEx":
-            occs = len(re.findall(Pattern, Text))
-            out = bool(occs)
+        match Mode:
+            case "Strict":
+                while Pattern in Text:
+                    out = True
+                    occs += 1
+                    Text = Text.replace(Pattern, "", 1)
+            case "RegEx":
+                occs = len(re.findall(Pattern, Text))
+                out = bool(occs)
         return (out, occs)
