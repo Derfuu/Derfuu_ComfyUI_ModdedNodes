@@ -1,7 +1,7 @@
 [project]
 name = "derfuu_comfyui_moddednodes"
 description = "Automate calculation depending on image sizes or something you want."
-version = "1.0.0"
+version = "1.0.1"
 license = "LICENSE"
 
 [project.urls]
